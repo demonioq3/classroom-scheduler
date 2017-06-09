@@ -12,7 +12,7 @@
     <modules>
         <module>crscheduler-domain</module>
         <module>crscheduler-persistence</module>
-        <module>crscheduler-bussiness</module>
+        <module>crscheduler-business</module>
         <module>crscheduler-web</module>
         <module>crscheduler-ear</module>
     </modules>
