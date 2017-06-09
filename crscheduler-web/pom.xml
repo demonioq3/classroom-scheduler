@@ -37,13 +37,6 @@
             <version>6.0</version>
         </dependency>
 
-        <!-- RIO, tema Primefaces -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>rio</artifactId>
-            <version>3.1.2</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
         <dependency>
             <groupId>org.apache.poi</groupId>
