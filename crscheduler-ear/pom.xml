@@ -82,13 +82,13 @@
                             <unpack>true</unpack>
                         </webModule>
                         <ejbModule>
-                            <groupId>ccl.ciisa.final-project</groupId>
-                            <artifactId>crsheduler-bussiness</artifactId>
+                            <groupId>cl.ciisa.final-project</groupId>
+                            <artifactId>crscheduler-business</artifactId>
                             <unpack>true</unpack>
                         </ejbModule>
                         <ejbModule>
                             <groupId>cl.ciisa.final-project</groupId>
-                            <artifactId>crsheduler-persistence</artifactId>
+                            <artifactId>crscheduler-persistence</artifactId>
                             <unpack>true</unpack>
                         </ejbModule>
 
