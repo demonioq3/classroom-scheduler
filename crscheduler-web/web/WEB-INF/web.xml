@@ -29,26 +29,6 @@
         <param-value>rio</param-value>
     </context-param>
 
-    <!-- melody -->
-    <!--<filter>
-        <filter-name>javamelody</filter-name>
-        <filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
-        <async-supported>true</async-supported>
-        <init-param>
-            <param-name>authorized-users</param-name>
-            <param-value>bpadmin:clave_muy_brigida</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>javamelody</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>ASYNC</dispatcher>
-    </filter-mapping>
-    <listener>
-        <listener-class>net.bull.javamelody.SessionListener</listener-class>
-    </listener>-->
-
     <!-- FILTER
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
@@ -73,26 +53,5 @@
     <welcome-file-list>
         <welcome-file>/views/home.xhtml</welcome-file>
     </welcome-file-list>
-
-    <error-page>
-        <error-code>403</error-code>
-        <location>/views/errors/error.xhtml</location>
-    </error-page>
-
-    <error-page>
-        <error-code>404</error-code>
-        <location>/views/errors/404.xhtml</location>
-    </error-page>
-
-    <error-page>
-        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
-        <location>/views/login.home.xhtml</location>
-    </error-page>
-
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type>
-        <location>/views/errors/error.xhtml</location>
-    </error-page>
-
 
 </web-app>

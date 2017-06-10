@@ -87,7 +87,6 @@ body {
   width: 230px;
   height: 64px;
   background-color: #ffffff;
-  border-right: solid 1px #0277bd;
   display: block;
 }
 #logo img {
@@ -1514,4 +1513,44 @@ i {
 
 ul.ui-tabs-nav {
   background-color: #0191da !important ;
+}
+
+#logo img {
+  height: 98px !important;
+  max-width: 190px !important;
+  margin-top: -17px !important;
+  margin-left: 8% !important;
+}
+
+#layout-topbar {
+  width: 100%;
+  height: 64px;
+  position: fixed;
+  z-index: 1000;
+  background-image: url("../wallpaper.png.xhtml?ln=images");
+  -webkit-box-shadow: 0px 2px 2px 0px #13a438;
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3); */
+}
+
+.fc-toolbar button {
+  border: solid 1px #4CAF50 !important;
+  background-color: #13a438 !important;
+}
+
+.fc-toolbar {
+  background-color: #8BC34A !important;
+}
+
+.fc-view-container table thead tr th {
+  background-color: #3c3c3b !important;
+  color: #eeeeee !important;
+}
+
+.ui-state-hover {
+  opacity:0.5 !important;
+}
+
+.ui-state-active {
+  border-bottom: 2px solid #fff;
 }
