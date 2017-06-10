@@ -683,7 +683,7 @@ i {
   }
   #logo {
     width: 230px;
-    height: 50px;
+    height: 64px;
   }
   #logo img {
     height: 24px;
@@ -871,7 +871,7 @@ i {
   }
   #logo {
     width: 230px;
-    height: 50px;
+    height: 64px;
   }
   #logo img {
     height: 24px;
@@ -1553,4 +1553,8 @@ ul.ui-tabs-nav {
 
 .ui-state-active {
   border-bottom: 2px solid #fff;
+}
+
+#mobile-menu-button {
+  background-color: rgb(19, 164, 56) !important;
 }

@@ -12,10 +12,7 @@
                     <h:form>
                         <p:growl id="messages" showDetail="true" />
 
-                        <h:panelGrid columnClasses="value">
-                            <h3>Gestión de aulas</h3>
-                            <p:schedule id="scheduleLocale" value="#{scheduleView.eventModel}" locale="cl" />
-                        </h:panelGrid>
+                        <p:schedule id="scheduleLocale" value="#{scheduleView.eventModel}" locale="cl" />
 
                         <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
                             <h:panelGrid id="eventDetails" columns="2">
