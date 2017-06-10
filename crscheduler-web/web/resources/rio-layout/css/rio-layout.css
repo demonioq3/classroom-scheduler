@@ -265,7 +265,7 @@ body {
   width: 100%;
   margin: 0px auto;
   padding: 0px;
-  margin-top: 70px;
+  margin-top: 66px;
 }
 .layout-menu.rio-menu {
   margin-top: 0px;
@@ -496,6 +496,17 @@ i {
   #layout-topbar {
     height: 64px;
   }
+
+  .sub-title {
+    display: block !important;
+    float: right !important;
+    padding-top: 16px !important;
+    padding-right: 18px !important;
+    color: #ffffff !important;
+    font-family: 'roboto_condensedlight' !important;
+    font-weight: bolder !important;
+  }
+
   #logo {
     width: 230px;
     height: 64px;
@@ -681,6 +692,17 @@ i {
   #layout-topbar {
     height: 50px;
   }
+  .sub-title {
+    display: block !important;
+    float: right !important;
+    padding-top: 21px !important;
+    padding-right: 18px !important;
+    color: #ffffff !important;
+    font-family: 'roboto_condensedlight' !important;
+    font-weight: bolder !important;
+    font-size: 15px !important;
+  }
+
   #logo {
     width: 230px;
     height: 64px;
@@ -868,6 +890,16 @@ i {
   /* topbar */
   #layout-topbar {
     height: 50px;
+  }
+  .sub-title {
+    display: block !important;
+    float: right !important;
+    padding-top: 21px !important;
+    padding-right: 18px !important;
+    color: #ffffff !important;
+    font-family: 'roboto_condensedlight' !important;
+    font-weight: bolder !important;
+    font-size: 15px !important;
   }
   #logo {
     width: 230px;
@@ -1561,4 +1593,23 @@ ul.ui-tabs-nav {
 
 .ui-button {
   background-color:#43A047 !important;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  background-color: #3c3c3b !important;
+  color: #ffffff !important;
+}
+
+.sub-title {
+  display: block;
+  float: left;
+  padding-top: 16px;
+  padding-left: 20px;
+  color: #ffffff;
+  font-family: 'roboto_condensedlight';
+  font-weight: bolder;
+}
+
+.fc-view-container .fc-month-view > table > thead {
+  background-color: #2f2e2e !important;
 }
