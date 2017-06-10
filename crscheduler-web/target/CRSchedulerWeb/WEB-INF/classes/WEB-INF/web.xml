@@ -71,7 +71,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/views/login.xhtml</welcome-file>
+        <welcome-file>/views/home.xhtml</welcome-file>
     </welcome-file-list>
 
     <error-page>
@@ -86,7 +86,7 @@
 
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
-        <location>/views/login.xhtml</location>
+        <location>/views/login.home.xhtml</location>
     </error-page>
 
     <error-page>
