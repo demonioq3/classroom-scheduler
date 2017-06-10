@@ -1558,3 +1558,7 @@ ul.ui-tabs-nav {
 #mobile-menu-button {
   background-color: rgb(19, 164, 56) !important;
 }
+
+.ui-button {
+  background-color:#43A047 !important;
+}
