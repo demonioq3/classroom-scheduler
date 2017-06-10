@@ -14,7 +14,6 @@
         <param-value>Development</param-value>
     </context-param>
 
-
     <context-param>
         <param-name>org.apache.myfaces.SERIALIZE_STATE_IN_SESSION</param-name>
         <param-value>false</param-value>
@@ -25,8 +24,13 @@
         <param-value>true</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>rio</param-value>
+    </context-param>
+
     <!-- melody -->
-    <filter>
+    <!--<filter>
         <filter-name>javamelody</filter-name>
         <filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
         <async-supported>true</async-supported>
@@ -43,7 +47,7 @@
     </filter-mapping>
     <listener>
         <listener-class>net.bull.javamelody.SessionListener</listener-class>
-    </listener>
+    </listener>-->
 
     <!-- FILTER
     <filter>
