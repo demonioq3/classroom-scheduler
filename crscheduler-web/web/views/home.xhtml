@@ -22,21 +22,21 @@
                         <p:dialog widgetVar="eventDialog" header="Ingresar solicitud de sala" showEffect="clip" hideEffect="clip" modal="true">
                             <h:panelGrid id="eventDetails" columns="2">
                                 <p:outputLabel value="Profesor:" for="acSimple" />
-                                <p:autoComplete id="acSimple" value="#{scheduleView.profesor}" completeMethod="#{scheduleView.completeText}" required="true"/>
+                                <p:autoComplete id="acSimple" value="#{scheduleView.selectedEvent.profesor}" completeMethod="#{scheduleView.completeText}" required="true"/>
 
                                 <p:outputLabel for="title" value="Sala:" />
-                                <p:selectOneMenu id="title" style="width:114px" required="true">
+                                <p:selectOneMenu id="title" value="#{scheduleView.selectedEvent.sala}" style="width:114px" required="true">
                                     <f:selectItem itemLabel="Seleccionar" itemValue="" />
-                                    <f:selectItem itemLabel="Sala 01" itemValue="Xbox One" />
-                                    <f:selectItem itemLabel="Sala 02" itemValue="PS4" />
-                                    <f:selectItem itemLabel="Sala 03" itemValue="Wii U" />
+                                    <f:selectItem itemLabel="Sala 01" itemValue="Sala 01" />
+                                    <f:selectItem itemLabel="Sala 02" itemValue="Sala 02" />
+                                    <f:selectItem itemLabel="Sala 03" itemValue="Sala 03" />
                                 </p:selectOneMenu>
 
                                 <p:outputLabel for="from" value="Hora desde:" />
-                                <p:calendar id="from" value="#{scheduleView.event.startDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+                                <p:calendar id="from" value="#{scheduleView.selectedEvent.fechaDesde}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
 
                                 <p:outputLabel for="to" value="Hora hasta:" />
-                                <p:calendar id="to" value="#{scheduleView.event.endDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+                                <p:calendar id="to" value="#{scheduleView.selectedEvent.fechaHasta}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
 
                                 <p:commandButton type="reset" value="Borrar" style="margin-top:7px" />
                                 <p:commandButton id="addButton" value="Guardar" actionListener="#{scheduleView.addEvent}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();"  style="float:right;margin-top:7px"/>

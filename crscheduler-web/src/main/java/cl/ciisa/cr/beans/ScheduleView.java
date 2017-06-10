@@ -12,6 +12,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
+import cl.ciisa.crs.business.dummy.Event;
+import org.apache.poi.ss.formula.functions.Even;
 import org.primefaces.event.ScheduleEntryMoveEvent;
 import org.primefaces.event.ScheduleEntryResizeEvent;
 import org.primefaces.event.SelectEvent;
@@ -27,31 +29,22 @@ public class ScheduleView implements Serializable {
 
     private ScheduleModel eventModel;
 
-    private ScheduleModel lazyEventModel;
-
     private ScheduleEvent event = new DefaultScheduleEvent();
 
-    private String profesor;
+    private Event selectedEvent;
 
     @PostConstruct
     public void init() {
         eventModel = new DefaultScheduleModel();
-        eventModel.addEvent(new DefaultScheduleEvent("Champions League Match", previousDay8Pm(), previousDay11Pm()));
-        eventModel.addEvent(new DefaultScheduleEvent("Birthday Party", today1Pm(), today6Pm()));
-        eventModel.addEvent(new DefaultScheduleEvent("Breakfast at Tiffanys", nextDay9Am(), nextDay11Am()));
-        eventModel.addEvent(new DefaultScheduleEvent("Plant the new garden stuff", theDayAfter3Pm(), fourDaysLater3pm()));
+        eventModel.addEvent(new DefaultScheduleEvent("Sala 01 \n Profesor asignado: Juan Sepúlveda", previousDay8Pm(), previousDay11Pm()));
+        eventModel.addEvent(new DefaultScheduleEvent("Sala 02 \n" +
+                " Profesor asignado: Juan Sepúlveda", today1Pm(), today6Pm()));
+        eventModel.addEvent(new DefaultScheduleEvent("Sala 02 \n" +
+                " Profesor asignado: Juan Sepúlveda", nextDay9Am(), nextDay11Am()));
+        eventModel.addEvent(new DefaultScheduleEvent("Sala 03 \n" +
+                " Profesor asignado: Juan Sepúlveda", theDayAfter3Pm(), fourDaysLater3pm()));
 
-        lazyEventModel = new LazyScheduleModel() {
-
-            @Override
-            public void loadEvents(Date start, Date end) {
-                Date random = getRandomDate(start);
-                addEvent(new DefaultScheduleEvent("Lazy Event 1", random, random));
-
-                random = getRandomDate(start);
-                addEvent(new DefaultScheduleEvent("Lazy Event 2", random, random));
-            }
-        };
+        selectedEvent = new Event();
     }
 
     public Date getRandomDate(Date base) {
@@ -71,10 +64,6 @@ public class ScheduleView implements Serializable {
 
     public ScheduleModel getEventModel() {
         return eventModel;
-    }
-
-    public ScheduleModel getLazyEventModel() {
-        return lazyEventModel;
     }
 
     private Calendar today() {
@@ -164,7 +153,7 @@ public class ScheduleView implements Serializable {
 
     public void addEvent(ActionEvent actionEvent) {
         if(event.getId() == null)
-            eventModel.addEvent(event);
+            eventModel.addEvent(new DefaultScheduleEvent("SALA " + selectedEvent.getSala() + " \n Profesor asignado: " + selectedEvent.getProfesor(), selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta()));
         else
             eventModel.updateEvent(event);
 
@@ -173,6 +162,10 @@ public class ScheduleView implements Serializable {
 
     public void onEventSelect(SelectEvent selectEvent) {
         event = (ScheduleEvent) selectEvent.getObject();
+        selectedEvent.setSala(event.getTitle().split("\\n")[0].substring(0, event.getTitle().split("\\n")[0].length() - 1));
+        selectedEvent.setProfesor(event.getTitle().split("\\n")[1].replace(" Profesor asignado: ", ""));
+        selectedEvent.setFechaDesde((Date) ((ScheduleEvent) selectEvent.getObject()).getStartDate());
+        selectedEvent.setFechaHasta((Date) ((ScheduleEvent) selectEvent.getObject()).getEndDate());
     }
 
     public void onDateSelect(SelectEvent selectEvent) {
@@ -204,11 +197,11 @@ public class ScheduleView implements Serializable {
         return results;
     }
 
-    public String getProfesor() {
-        return profesor;
+    public Event getSelectedEvent() {
+        return selectedEvent;
     }
 
-    public void setProfesor(String profesor) {
-        this.profesor = profesor;
+    public void setSelectedEvent(Event selectedEvent) {
+        this.selectedEvent = selectedEvent;
     }
 }
