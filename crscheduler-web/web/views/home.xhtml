@@ -21,21 +21,8 @@
             <p:growl id="messages" showDetail="true" />
 
             <h:panelGrid columnClasses="value">
-                <h3 style="margin-top: 0">Editable Schedule</h3>
-                <p:schedule id="schedule" value="#{scheduleView.eventModel}" widgetVar="myschedule" timeZone="GMT+2">
-
-                    <p:ajax event="dateSelect" listener="#{scheduleView.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
-                    <p:ajax event="eventSelect" listener="#{scheduleView.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
-                    <p:ajax event="eventMove" listener="#{scheduleView.onEventMove}" update="messages" />
-                    <p:ajax event="eventResize" listener="#{scheduleView.onEventResize}" update="messages" />
-
-                </p:schedule>
-
                 <h3>Locale Support ( Example: Turkish )</h3>
-                <p:schedule id="scheduleLocale" value="#{scheduleView.eventModel}" locale="tr" />
-
-                <h3>Lazy Schedule</h3>
-                <p:schedule value="#{scheduleView.lazyEventModel}" />
+                <p:schedule id="scheduleLocale" value="#{scheduleView.eventModel}" locale="cl" />
             </h:panelGrid>
 
             <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
@@ -59,27 +46,27 @@
         </h:form>
 
         <script type="text/javascript">
-            PrimeFaces.locales['tr'] = {
-                closeText: 'kapat',
-                prevText: 'geri',
-                nextText: 'ileri',
-                currentText: 'bugün',
-                monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran',
-                    'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
-                monthNamesShort: ['Oca','Şub','Mar','Nis','May','Haz',
-                    'Tem','Ağu','Eyl','Eki','Kas','Ara'],
-                dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
-                dayNamesShort: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
-                dayNamesMin: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
-                weekHeader: 'Hf',
+            PrimeFaces.locales['cl'] = {
+                closeText: 'Cerrar',
+                prevText: 'Atrás',
+                nextText: 'Siguiente',
+                currentText: 'Actual',
+                monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                    'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+                    'Jul','Ago','Sep','Oct','Nov','Dic'],
+                dayNames: ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
+                dayNamesShort: ['Ln','Ma','Mi','Ju','Vi','Sa','Do'],
+                dayNamesMin: ['Ln','Ma','Mi','Ju','Vi','Sa','Do'],
+                weekHeader: 'Semana',
                 firstDay: 1,
                 isRTL: false,
                 showMonthAfterYear: false,
                 yearSuffix: '',
-                month: 'Ay',
-                week: 'Hafta',
-                day: 'Gün',
-                allDayText : 'Tüm Gün'
+                month: 'Mes',
+                week: 'Semana',
+                day: 'Día',
+                allDayText : 'Todos los días'
             };
         </script>
         <style type="text/css">
