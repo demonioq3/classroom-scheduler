@@ -34,7 +34,14 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.0</version>
+            <version>LATEST</version>
+        </dependency>
+
+        <!-- RIO, tema Primefaces -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>rio</artifactId>
+            <version>3.1.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
@@ -123,5 +130,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
