@@ -31,6 +31,7 @@
     <orderEntry type="library" name="Maven: wsdl4j:wsdl4j:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: net.bull.javamelody:javamelody-core:1.60.0" level="project" />
     <orderEntry type="library" name="Maven: org.jrobin:jrobin:1.5.9" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
@@ -46,5 +47,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.ejb:javax.ejb-api:3.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.transaction:javax.transaction-api:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.primefaces:primefaces:6.1" level="project" />
   </component>
 </module>

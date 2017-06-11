@@ -11,6 +11,7 @@ public class Event {
     private String sala;
     private Date fechaDesde;
     private Date fechaHasta;
+    private String bloque;
 
     public String getProfesor() {
         return profesor;
@@ -42,5 +43,13 @@ public class Event {
 
     public void setFechaHasta(Date fechaHasta) {
         this.fechaHasta = fechaHasta;
+    }
+
+    public String getBloque() {
+        return bloque;
+    }
+
+    public void setBloque(String bloque) {
+        this.bloque = bloque;
     }
 }
