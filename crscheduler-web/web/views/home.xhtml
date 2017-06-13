@@ -10,7 +10,7 @@
             <div class="ContainerIndent">
                 <div class="Card ShadowEffect TexAlCenter">
                     <h:form>
-                        <p:growl id="messages" showDetail="true" life="5000000" sticky=""/>
+                        <p:growl id="messages" showDetail="true"/>
 
                         <p:schedule id="scheduleLocale" value="#{scheduleView.eventModel}" locale="cl" widgetVar="myschedule" timeZone="GMT-4">
                             <p:ajax event="dateSelect" listener="#{scheduleView.onDateSelect}" update="eventDialogId" oncomplete="PF('eventDialog').show();" />
@@ -22,7 +22,7 @@
                         <p:dialog id="eventDialogId" widgetVar="eventDialog" header="#{scheduleView.event.id == null ? 'Ingresar solicitud de sala' : 'Editar solicitud'}" showEffect="clip" hideEffect="clip" modal="true">
                             <h:panelGrid id="eventDetails" columns="2">
                                 <p:outputLabel value="Profesor:" for="acSimple" style="float:left"/>
-                                <p:autoComplete id="acSimple" value="#{scheduleView.selectedEvent.profesor}" completeMethod="#{scheduleView.completeText}" required="true"/>
+                                <p:autoComplete id="acSimple" value="#{scheduleView.selectedEvent.profesor}" completeMethod="#{scheduleView.completeText}" required="true" style="width: 170px;"/>
 
                                 <p:outputLabel for="sala" value="Sala:" style="float:left"/>
                                 <p:selectOneMenu id="sala" value="#{scheduleView.selectedEvent.sala}" style="width:114px" required="true">
@@ -54,14 +54,14 @@
 
 
                                 <p:outputLabel id="from_label" for="from" value="Hora desde:" rendered="#{scheduleView.withRange}" style="float:left"/>
-                                <p:calendar id="from" value="#{scheduleView.selectedEvent.fechaDesde}" pattern="dd/MM/yyyy HH:mm" rendered="#{scheduleView.withRange}"/>
+                                <p:calendar id="from" value="#{scheduleView.selectedEvent.fechaDesde}" pattern="dd/MM/yyyy HH:mm" rendered="#{scheduleView.withRange}" style="width: 170px;"/>
 
                                 <p:outputLabel id="to_label" for="to" value="Hora hasta:" rendered="#{scheduleView.withRange}" style="float:left"/>
-                                <p:calendar id="to" value="#{scheduleView.selectedEvent.fechaHasta}" pattern="dd/MM/yyyy HH:mm" rendered="#{scheduleView.withRange}"/>
+                                <p:calendar id="to" value="#{scheduleView.selectedEvent.fechaHasta}" pattern="dd/MM/yyyy HH:mm" rendered="#{scheduleView.withRange}" style="width: 170px;"/>
                             </h:panelGrid>
 
                             <p:commandButton value="Borrar" rendered="#{scheduleView.event.id != null}" style="margin-top:7px;background-color: #d42626 !important;float:left" action="#{scheduleView.deleteEvent}" update="scheduleLocale" oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
-                            <p:commandButton id="addButton" value="Guardar" actionListener="#{scheduleView.addEvent}" update="messages" oncomplete="PF('myschedule').update();PF('eventDialog').hide();"  style="float:right;margin-top:7px"/>
+                            <p:commandButton id="addButton" value="Guardar" actionListener="#{scheduleView.addEvent}" update="messages, scheduleLocale" oncomplete="PF('myschedule').update();PF('eventDialog').hide();"  style="float:right;margin-top:7px"/>
                         </p:dialog>
                     </h:form>
 

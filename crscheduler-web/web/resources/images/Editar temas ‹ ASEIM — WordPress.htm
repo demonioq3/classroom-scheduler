@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ie8 wp-toolbar"  lang="es-ES">
+<![endif]-->
+<!--[if !(IE 8) ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar"  lang="es-ES">
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Editar temas &lsaquo; ASEIM &#8212; WordPress</title>
+<script type="text/javascript">
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var ajaxurl = '/wp-admin/admin-ajax.php',
+	pagenow = 'theme-editor',
+	typenow = '',
+	adminpage = 'theme-editor-php',
+	thousandsSeparator = '.',
+	decimalPoint = ',',
+	isRtl = 0;
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel='dns-prefetch' href='//s.w.org' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' href='http://www.aseim.cl/wp-admin/load-styles.php?c=0&amp;dir=ltr&amp;load%5B%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,widgets,site-icon,&amp;load%5B%5D=l10n,buttons,wp-auth-check&amp;ver=4.7.5' type='text/css' media='all' />
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='http://www.aseim.cl/wp-admin/css/ie.min.css?ver=4.7.5' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='library-menu-styles-css'  href='http://www.aseim.cl/wp-content/themes/divi/includes/builder/styles/library_menu.css?ver=3.0.31' type='text/css' media='all' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.aseim.cl\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		
+<script type='text/javascript'>
+/* <![CDATA[ */
+var userSettings = {"url":"\/","uid":"1","time":"1497241838","secure":""};/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.aseim.cl/wp-admin/load-scripts.php?c=0&amp;load%5B%5D=jquery-core,jquery-migrate,utils&amp;ver=4.7.5'></script>
+	<link id="wp-admin-canonical" rel="canonical" href="http://www.aseim.cl/wp-admin/theme-editor.php?file=header.php&#038;theme=divi" />
+	<script>
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, document.getElementById( 'wp-admin-canonical' ).href + window.location.hash );
+		}
+	</script>
+<script type="text/javascript">var _wpColorScheme = {"icons":{"base":"#82878c","focus":"#00a0d2","current":"#fff"}};</script>
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+</head>
+<body class="wp-admin wp-core-ui no-js et-wp-after-3_8 theme-editor-php auto-fold admin-bar branch-4-7 version-4-7-5 admin-color-fresh locale-es-es no-customize-support no-svg">
+<script type="text/javascript">
+	document.body.className = document.body.className.replace('no-js','js');
+</script>
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+		</script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script type="text/javascript">
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = true;
+		
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain)
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+		</script>
+	<!--<![endif]-->
+	
+<div id="wpwrap">
+
+<div id="adminmenumain" role="navigation" aria-label="Menú principal">
+<a href="#wpbody-content" class="screen-reader-shortcut">Saltar al contenido principal</a>
+<a href="#wp-toolbar" class="screen-reader-shortcut">Ir a la barra de herramientas</a>
+<div id="adminmenuback"></div>
+<div id="adminmenuwrap">
+<ul id="adminmenu">
+
+
+	<li class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" id="menu-dashboard">
+	<a href='index.php' class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-dashboard'><br /></div><div class='wp-menu-name'>Escritorio</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Escritorio</li><li class="wp-first-item"><a href='index.php' class="wp-first-item">Inicio</a></li><li><a href='update-core.php'>Actualizaciones <span class='update-plugins count-4'><span class='update-count'>4</span></span></a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-post open-if-no-js menu-top-first" id="menu-posts">
+	<a href='edit.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-post open-if-no-js menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-post'><br /></div><div class='wp-menu-name'>Entradas</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Entradas</li><li class="wp-first-item"><a href='edit.php' class="wp-first-item">Todas las entradas</a></li><li><a href='post-new.php'>Añadir nueva</a></li><li><a href='edit-tags.php?taxonomy=category'>Categorías</a></li><li><a href='edit-tags.php?taxonomy=post_tag'>Etiquetas</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" id="menu-media">
+	<a href='upload.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-media'><br /></div><div class='wp-menu-name'>Medios</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Medios</li><li class="wp-first-item"><a href='upload.php' class="wp-first-item">Biblioteca</a></li><li><a href='media-new.php'>Añadir nuevo</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-page" id="menu-pages">
+	<a href='edit.php?post_type=page' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-page" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-page'><br /></div><div class='wp-menu-name'>Páginas</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Páginas</li><li class="wp-first-item"><a href='edit.php?post_type=page' class="wp-first-item">Todas las páginas</a></li><li><a href='post-new.php?post_type=page'>Añadir nueva</a></li></ul></li>
+	<li class="wp-not-current-submenu menu-top menu-icon-comments" id="menu-comments">
+	<a href='edit-comments.php' class="wp-not-current-submenu menu-top menu-icon-comments" ><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-comments'><br /></div><div class='wp-menu-name'>Comentarios <span class="awaiting-mod count-0"><span class="pending-count">0</span></span></div></a></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-project menu-top-last" id="menu-posts-project">
+	<a href='edit.php?post_type=project' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-project menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-post'><br /></div><div class='wp-menu-name'>Proyectos</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Proyectos</li><li class="wp-first-item"><a href='edit.php?post_type=project' class="wp-first-item">Todos Los Proyectos</a></li><li><a href='post-new.php?post_type=project'>Añadir nuevo</a></li><li><a href='edit-tags.php?taxonomy=project_category&amp;post_type=project'>Categorías</a></li><li><a href='edit-tags.php?taxonomy=project_tag&amp;post_type=project'>Etiquetas</a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" id="menu-appearance">
+	<a href='themes.php' class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" ><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-appearance'><br /></div><div class='wp-menu-name'>Apariencia</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Apariencia</li><li class="wp-first-item"><a href='themes.php' class="wp-first-item">Temas</a></li><li class="hide-if-no-customize"><a href='customize.php?return=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dheader.php%26theme%3Ddivi' class="hide-if-no-customize">Personalizar</a></li><li><a href='widgets.php'>Widgets</a></li><li><a href='nav-menus.php'>Menús</a></li><li class="hide-if-no-customize"><a href='customize.php?return=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dheader.php%26theme%3Ddivi&#038;autofocus%5Bcontrol%5D=background_image' class="hide-if-no-customize">Fondo</a></li><li><a href='themes.php?page=custom-background'>Fondo</a></li><li class="current"><a href='theme-editor.php' class="current">Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" id="menu-plugins">
+	<a href='plugins.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-plugins'><br /></div><div class='wp-menu-name'>Plugins <span class='update-plugins count-1'><span class='plugin-count'>1</span></span></div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Plugins <span class='update-plugins count-1'><span class='plugin-count'>1</span></span></li><li class="wp-first-item"><a href='plugins.php' class="wp-first-item">Plugins instalados</a></li><li><a href='plugin-install.php'>Añadir nuevo</a></li><li><a href='plugin-editor.php'>Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" id="menu-users">
+	<a href='users.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-users'><br /></div><div class='wp-menu-name'>Usuarios</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Usuarios</li><li class="wp-first-item"><a href='users.php' class="wp-first-item">Todos los usuarios</a></li><li><a href='user-new.php'>Añadir nuevo</a></li><li><a href='profile.php'>Tu perfil</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" id="menu-tools">
+	<a href='tools.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-tools'><br /></div><div class='wp-menu-name'>Herramientas</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Herramientas</li><li class="wp-first-item"><a href='tools.php' class="wp-first-item">Herramientas disponibles</a></li><li><a href='import.php'>Importar</a></li><li><a href='export.php'>Exportar</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" id="menu-settings">
+	<a href='options-general.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-settings'><br /></div><div class='wp-menu-name'>Ajustes</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Ajustes</li><li class="wp-first-item"><a href='options-general.php' class="wp-first-item">Generales</a></li><li><a href='options-writing.php'>Escritura</a></li><li><a href='options-reading.php'>Lectura</a></li><li><a href='options-discussion.php'>Comentarios</a></li><li><a href='options-media.php'>Medios</a></li><li><a href='options-permalink.php'>Enlaces permanentes</a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_et_divi_options menu-top-first menu-top-last" id="toplevel_page_et_divi_options"><a href='admin.php?page=et_divi_options' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_et_divi_options menu-top-first menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class='wp-menu-image dashicons-before dashicons-admin-generic'><br /></div><div class='wp-menu-name'>Divi</div></a>
+	<ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head' aria-hidden='true'>Divi</li><li class="wp-first-item"><a href='admin.php?page=et_divi_options' class="wp-first-item">Opciones del tema</a></li><li><a href='customize.php?et_customizer_option_set=theme'>Personalizador de temas</a></li><li><a href='customize.php?et_customizer_option_set=module'>Personalizador de módulos</a></li><li><a href='admin.php?page=et_divi_role_editor'>Editor de Rol</a></li><li><a href='edit.php?post_type=et_pb_layout'>Biblioteca de Divi</a></li></ul></li><li id="collapse-menu" class="hide-if-no-js"><button type="button" id="collapse-button" aria-label="Contraer menú principal" aria-expanded="true"><span class="collapse-button-icon" aria-hidden="true"></span><span class="collapse-button-label">Cerrar menú</span></button></li></ul>
+</div>
+</div>
+<div id="wpcontent">
+
+		<div id="wpadminbar" class="nojq nojs">
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Barra de herramientas" tabindex="0">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-menu-toggle"><a class="ab-item" href="#"><span class="ab-icon"></span><span class="screen-reader-text">Menú</span></a>		</li>
+		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.aseim.cl/wp-admin/about.php"><span class="ab-icon"></span><span class="screen-reader-text">Acerca de WordPress</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+		<li id="wp-admin-bar-about"><a class="ab-item" href="http://www.aseim.cl/wp-admin/about.php">Acerca de WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://es.wordpress.org/">WordPress.org</a>		</li>
+		<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://codex.wordpress.org/">Documentación</a>		</li>
+		<li id="wp-admin-bar-support-forums"><a class="ab-item" href="http://es.forums.wordpress.org/">Foros de soporte</a>		</li>
+		<li id="wp-admin-bar-feedback"><a class="ab-item" href="http://es.forums.wordpress.org/forum/peticiones-y-feedback">Sugerencias</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.aseim.cl/">ASEIM</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
+		<li id="wp-admin-bar-view-site"><a class="ab-item" href="http://www.aseim.cl/">Visitar sitio</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-updates"><a class="ab-item" href="http://www.aseim.cl/wp-admin/update-core.php" title="1 actualización de WordPress, 1 actualización de plugin, 2 actualizaciones de temas"><span class="ab-icon"></span><span class="ab-label">4</span><span class="screen-reader-text">1 actualización de WordPress, 1 actualización de plugin, 2 actualizaciones de temas</span></a>		</li>
+		<li id="wp-admin-bar-comments"><a class="ab-item" href="http://www.aseim.cl/wp-admin/edit-comments.php"><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text">0 comentarios están esperando moderación</span></a>		</li>
+		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.aseim.cl/wp-admin/post-new.php"><span class="ab-icon"></span><span class="ab-label">Nuevo</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
+		<li id="wp-admin-bar-new-post"><a class="ab-item" href="http://www.aseim.cl/wp-admin/post-new.php">Entrada</a>		</li>
+		<li id="wp-admin-bar-new-media"><a class="ab-item" href="http://www.aseim.cl/wp-admin/media-new.php">Medio</a>		</li>
+		<li id="wp-admin-bar-new-page"><a class="ab-item" href="http://www.aseim.cl/wp-admin/post-new.php?post_type=page">Página</a>		</li>
+		<li id="wp-admin-bar-new-project"><a class="ab-item" href="http://www.aseim.cl/wp-admin/post-new.php?post_type=project">Proyecto</a>		</li>
+		<li id="wp-admin-bar-new-user"><a class="ab-item" href="http://www.aseim.cl/wp-admin/user-new.php">Usuario</a>		</li></ul></div>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true" href="http://www.aseim.cl/wp-admin/profile.php">Hola, agustin.santiago<img alt='' src='http://2.gravatar.com/avatar/84ebd31ac894a8267033a174f10d7777?s=26&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/84ebd31ac894a8267033a174f10d7777?s=52&amp;d=mm&amp;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
+		<li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="http://www.aseim.cl/wp-admin/profile.php"><img alt='' src='http://2.gravatar.com/avatar/84ebd31ac894a8267033a174f10d7777?s=64&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/84ebd31ac894a8267033a174f10d7777?s=128&amp;d=mm&amp;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>agustin.santiago</span></a>		</li>
+		<li id="wp-admin-bar-edit-profile"><a class="ab-item" href="http://www.aseim.cl/wp-admin/profile.php">Editar mi perfil</a>		</li>
+		<li id="wp-admin-bar-logout"><a class="ab-item" href="http://www.aseim.cl/wp-login.php?action=logout&#038;_wpnonce=3cf5ee471a">Cerrar sesión</a>		</li></ul></div>		</li></ul>			</div>
+						<a class="screen-reader-shortcut" href="http://www.aseim.cl/wp-login.php?action=logout&#038;_wpnonce=3cf5ee471a">Cerrar sesión</a>
+					</div>
+
+		
+<div id="wpbody" role="main">
+
+<div id="wpbody-content" aria-label="Contenido principal" tabindex="0">
+		<div id="screen-meta" class="metabox-prefs">
+
+			<div id="contextual-help-wrap" class="hidden" tabindex="-1" aria-label="Pestaña de ayuda contextual">
+				<div id="contextual-help-back"></div>
+				<div id="contextual-help-columns">
+					<div class="contextual-help-tabs">
+						<ul>
+						
+							<li id="tab-link-overview" class="active">
+								<a href="#tab-panel-overview" aria-controls="tab-panel-overview">
+									Vista previa								</a>
+							</li>
+												</ul>
+					</div>
+
+										<div class="contextual-help-sidebar">
+						<p><strong>Para más información:</strong></p><p><a href="https://codex.wordpress.org/Theme_Development">Documentación sobre el desarrollo de temas</a></p><p><a href="https://codex.wordpress.org/Using_Themes">Documentación sobre el uso de temas</a></p><p><a href="https://codex.wordpress.org/Editing_Files">Documentación sobre cómo editar archivos</a></p><p><a href="https://codex.wordpress.org/Template_Tags">Documentación sobre etiquetas de plantilla</a></p><p><a href="https://es.wordpress.org/support/">Foros de soporte</a></p>					</div>
+					
+					<div class="contextual-help-tabs-wrap">
+						
+							<div id="tab-panel-overview" class="help-tab-content active">
+								<p>Puedes usar el Editor de temas para editar de forma individual los archivos css y php que crean la apariencia de tu sitio.</p>
+	<p>Empieza eligiendo un tema para editarlo desde el menú desplegable y haciendo clic en el botón Elegir. Entonces aparecerá una lista de los archivos de plantilla del tema. Haciendo clic en cualquier nombre de archivo hace que el archivo aparezca en la caja grande del editor.</p>
+	<p>Para los archivos PHP puedes usar el desplegable de documentación y elegir entre las funciones reconocidas en ese archivo. Buscar te lleva a una web con material de referencia acerca de esa función en particular.</p>
+	<p id="newcontent-description">En el área de edición la tecla Tab introduce un carácter de tabulación. Para moverse por debajo de esta área pulsando Tab, pulsa la tecla Esc seguida de la tecla Tab. En algunos casos habrá que presionar dos veces la tecla Esc antes de que la tecla Tab te permita continuar.</p>
+	<p>Después de introducir tus modificaciones, haz click en Actualizar archivo.</p>
+	<p><strong>Advertencia:</strong> piensa detenidamente en la posibilidad de que tu sitio produzca errores y sea inaccesible si estás editando el tema en uso y cometes algún error.</p>
+	<p>Actualizar a una versión más nueva del mismo tema sobrescribirá los cambios que hayas hecho. Para evitar esto prueba a crear un <a href="https://codex.wordpress.org/Child_Themes">tema hijo</a>.</p>							</div>
+											</div>
+				</div>
+			</div>
+				</div>
+				<div id="screen-meta-links">
+					<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
+			<button type="button" id="contextual-help-link" class="button show-settings" aria-controls="contextual-help-wrap" aria-expanded="false">Ayuda</button>
+			</div>
+				</div>
+		<div class='update-nag'>¡Ya está disponible <a href="https://codex.wordpress.org/Version_4.8">WordPress 4.8</a>! <a href="http://www.aseim.cl/wp-admin/update-core.php" aria-label="Por favor, actualiza WordPress ahora">Por favor, actualiza ahora</a>.</div><div class="wrap">
+<h1>Editar temas</h1>
+
+<div class="fileedit-sub">
+<div class="alignleft">
+<h2>Divi: Cabecera del tema <span>(header.php)</span></h2>
+</div>
+<div class="alignright">
+	<form action="theme-editor.php" method="post">
+		<strong><label for="theme">Elige el tema a editar: </label></strong>
+		<select name="theme" id="theme">
+
+	<option value="divi" selected="selected">Divi</option>
+	<option value="twentyfifteen">Twenty Fifteen</option>
+	<option value="twentyseventeen">Twenty Seventeen</option>
+	<option value="twentysixteen">Twenty Sixteen</option>		</select>
+		<input type="submit" name="Submit" id="Submit" class="button" value="Elegir"  />	</form>
+</div>
+<br class="clear" />
+</div>
+	<div id="templateside">
+	<h2>Plantillas</h2>
+	<ul>
+		<li><a href="theme-editor.php?file=404.php&amp;theme=divi">Error 404 (página no encontrada)<br /><span class="nonessential">(404.php)</span></a></li>
+		<li><a href="theme-editor.php?file=comments.php&amp;theme=divi">Comentarios<br /><span class="nonessential">(comments.php)</span></a></li>
+		<li><a href="theme-editor.php?file=core%2Fcomponents.php&amp;theme=divi">components.php<br /><span class="nonessential">(core/components.php)</span></a></li>
+		<li><a href="theme-editor.php?file=core%2Ffunctions.php&amp;theme=divi">functions.php<br /><span class="nonessential">(core/functions.php)</span></a></li>
+		<li><a href="theme-editor.php?file=core%2Finit.php&amp;theme=divi">init.php<br /><span class="nonessential">(core/init.php)</span></a></li>
+		<li><a href="theme-editor.php?file=core%2Fupdates_init.php&amp;theme=divi">updates_init.php<br /><span class="nonessential">(core/updates_init.php)</span></a></li>
+		<li><a href="theme-editor.php?file=epanel%2Fcore_functions.php&amp;theme=divi">core_functions.php<br /><span class="nonessential">(epanel/core_functions.php)</span></a></li>
+		<li><a href="theme-editor.php?file=epanel%2Fcustom_functions.php&amp;theme=divi">custom_functions.php<br /><span class="nonessential">(epanel/custom_functions.php)</span></a></li>
+		<li><a href="theme-editor.php?file=et-pagebuilder%2Fet-pagebuilder.php&amp;theme=divi">et-pagebuilder.php<br /><span class="nonessential">(et-pagebuilder/et-pagebuilder.php)</span></a></li>
+		<li><a href="theme-editor.php?file=footer.php&amp;theme=divi">Pie de página del tema<br /><span class="nonessential">(footer.php)</span></a></li>
+		<li><a href="theme-editor.php?file=functions.php&amp;theme=divi">Funciones del tema<br /><span class="nonessential">(functions.php)</span></a></li>
+		<li><a href="theme-editor.php?file=header.php&amp;theme=divi"><span class="highlight">Cabecera del tema<br /><span class="nonessential">(header.php)</span></span></a></li>
+		<li><a href="theme-editor.php?file=includes%2Fnavigation.php&amp;theme=divi">navigation.php<br /><span class="nonessential">(includes/navigation.php)</span></a></li>
+		<li><a href="theme-editor.php?file=includes%2Fno-results.php&amp;theme=divi">no-results.php<br /><span class="nonessential">(includes/no-results.php)</span></a></li>
+		<li><a href="theme-editor.php?file=includes%2Fsocial_icons.php&amp;theme=divi">social_icons.php<br /><span class="nonessential">(includes/social_icons.php)</span></a></li>
+		<li><a href="theme-editor.php?file=includes%2Fwidgets.php&amp;theme=divi">widgets.php<br /><span class="nonessential">(includes/widgets.php)</span></a></li>
+		<li><a href="theme-editor.php?file=index.php&amp;theme=divi">Plantilla de la página principal<br /><span class="nonessential">(index.php)</span></a></li>
+		<li><a href="theme-editor.php?file=options_divi.php&amp;theme=divi">options_divi.php</a></li>
+		<li><a href="theme-editor.php?file=page-template-blank.php&amp;theme=divi">Blank Page Plantilla de Página<br /><span class="nonessential">(page-template-blank.php)</span></a></li>
+		<li><a href="theme-editor.php?file=page.php&amp;theme=divi">Página simple<br /><span class="nonessential">(page.php)</span></a></li>
+		<li><a href="theme-editor.php?file=post_thumbnails_divi.php&amp;theme=divi">post_thumbnails_divi.php</a></li>
+		<li><a href="theme-editor.php?file=sidebar-footer.php&amp;theme=divi">sidebar-footer.php</a></li>
+		<li><a href="theme-editor.php?file=sidebar.php&amp;theme=divi">Barra lateral<br /><span class="nonessential">(sidebar.php)</span></a></li>
+		<li><a href="theme-editor.php?file=single-et_pb_layout.php&amp;theme=divi">single-et_pb_layout.php</a></li>
+		<li><a href="theme-editor.php?file=single-project.php&amp;theme=divi">single-project.php</a></li>
+		<li><a href="theme-editor.php?file=single.php&amp;theme=divi">Entrada individual<br /><span class="nonessential">(single.php)</span></a></li>
+	</ul>
+	<h2>Estilos</h2>
+	<ul>
+		<li><a href="theme-editor.php?file=style.css&amp;theme=divi">Hoja de estilo<br /><span class="nonessential">(style.css)</span></a></li>
+		<li><a href="theme-editor.php?file=rtl.css&amp;theme=divi">Hoja de estilos RTL<br /><span class="nonessential">(rtl.css)</span></a></li>
+</ul>
+</div>
+	<form name="template" id="template" action="theme-editor.php" method="post">
+	<input type="hidden" id="_wpnonce" name="_wpnonce" value="7f3ecdf1bc" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/theme-editor.php?file=header.php&amp;theme=divi" />		<div><textarea cols="70" rows="30" name="newcontent" id="newcontent" aria-describedby="newcontent-description">&lt;!DOCTYPE html&gt;
+&lt;!--[if IE 6]&gt;
+&lt;html id=&quot;ie6&quot; &lt;?php language_attributes(); ?&gt;&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;
+&lt;html id=&quot;ie7&quot; &lt;?php language_attributes(); ?&gt;&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;
+&lt;html id=&quot;ie8&quot; &lt;?php language_attributes(); ?&gt;&gt;
+&lt;![endif]--&gt;
+&lt;!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]&gt;&lt;!--&gt;
+&lt;html &lt;?php language_attributes(); ?&gt;&gt;
+&lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;&lt;?php bloginfo( &#039;charset&#039; ); ?&gt;&quot; /&gt;
+	&lt;?php elegant_description(); ?&gt;
+	&lt;?php elegant_keywords(); ?&gt;
+	&lt;?php elegant_canonical(); ?&gt;
+
+	&lt;?php do_action( &#039;et_head_meta&#039; ); ?&gt;
+
+	&lt;link rel=&quot;pingback&quot; href=&quot;&lt;?php bloginfo(&#039;pingback_url&#039;); ?&gt;&quot; /&gt;
+
+	&lt;?php $template_directory_uri = get_template_directory_uri(); ?&gt;
+	&lt;!--[if lt IE 9]&gt;
+	&lt;script src=&quot;&lt;?php echo esc_url( $template_directory_uri . &#039;/js/html5.js&quot;&#039; ); ?&gt;&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;script type=&quot;text/javascript&quot;&gt;
+		document.documentElement.className = &#039;js&#039;;
+	&lt;/script&gt;
+
+	&lt;?php wp_head(); ?&gt;
+&lt;/head&gt;
+&lt;body &lt;?php body_class(); ?&gt;&gt;
+	&lt;div id=&quot;page-container&quot;&gt;
+&lt;?php
+	if ( is_page_template( &#039;page-template-blank.php&#039; ) ) {
+		return;
+	}
+
+	$et_secondary_nav_items = et_divi_get_top_nav_items();
+
+	$et_phone_number = $et_secondary_nav_items-&gt;phone_number;
+
+	$et_email = $et_secondary_nav_items-&gt;email;
+
+	$et_contact_info_defined = $et_secondary_nav_items-&gt;contact_info_defined;
+
+	$show_header_social_icons = $et_secondary_nav_items-&gt;show_header_social_icons;
+
+	$et_secondary_nav = $et_secondary_nav_items-&gt;secondary_nav;
+
+	$et_top_info_defined = $et_secondary_nav_items-&gt;top_info_defined;
+
+	$et_slide_header = &#039;slide&#039; === et_get_option( &#039;header_style&#039;, &#039;left&#039; ) || &#039;fullscreen&#039; === et_get_option( &#039;header_style&#039;, &#039;left&#039; ) ? true : false;
+?&gt;
+
+	&lt;?php if ( $et_top_info_defined &amp;&amp; ! $et_slide_header || is_customize_preview() ) : ?&gt;
+		&lt;div id=&quot;top-header&quot;&lt;?php echo $et_top_info_defined ? &#039;&#039; : &#039;style=&quot;display: none;&quot;&#039;; ?&gt;&gt;
+			&lt;div class=&quot;container clearfix&quot;&gt;
+
+			&lt;?php if ( $et_contact_info_defined ) : ?&gt;
+
+				&lt;div id=&quot;et-info&quot;&gt;
+				&lt;?php if ( &#039;&#039; !== ( $et_phone_number = et_get_option( &#039;phone_number&#039; ) ) ) : ?&gt;
+					&lt;span id=&quot;et-info-phone&quot;&gt;&lt;?php echo et_sanitize_html_input_text( $et_phone_number ); ?&gt;&lt;/span&gt;
+				&lt;?php endif; ?&gt;
+
+				&lt;?php if ( &#039;&#039; !== ( $et_email = et_get_option( &#039;header_email&#039; ) ) ) : ?&gt;
+					&lt;a href=&quot;&lt;?php echo esc_attr( &#039;mailto:&#039; . $et_email ); ?&gt;&quot;&gt;&lt;span id=&quot;et-info-email&quot;&gt;&lt;?php echo esc_html( $et_email ); ?&gt;&lt;/span&gt;&lt;/a&gt;
+				&lt;?php endif; ?&gt;
+
+				&lt;?php
+				if ( true === $show_header_social_icons ) {
+					get_template_part( &#039;includes/social_icons&#039;, &#039;header&#039; );
+				} ?&gt;
+				&lt;/div&gt; &lt;!-- #et-info --&gt;
+
+			&lt;?php endif; // true === $et_contact_info_defined ?&gt;
+
+				&lt;div id=&quot;et-secondary-menu&quot;&gt;
+				&lt;?php
+					if ( ! $et_contact_info_defined &amp;&amp; true === $show_header_social_icons ) {
+						get_template_part( &#039;includes/social_icons&#039;, &#039;header&#039; );
+					} else if ( $et_contact_info_defined &amp;&amp; true === $show_header_social_icons ) {
+						ob_start();
+
+						get_template_part( &#039;includes/social_icons&#039;, &#039;header&#039; );
+
+						$duplicate_social_icons = ob_get_contents();
+
+						ob_end_clean();
+
+						printf(
+							&#039;&lt;div class=&quot;et_duplicate_social_icons&quot;&gt;
+								%1$s
+							&lt;/div&gt;&#039;,
+							$duplicate_social_icons
+						);
+					}
+
+					if ( &#039;&#039; !== $et_secondary_nav ) {
+						echo $et_secondary_nav;
+					}
+
+					et_show_cart_total();
+				?&gt;
+				&lt;/div&gt; &lt;!-- #et-secondary-menu --&gt;
+
+			&lt;/div&gt; &lt;!-- .container --&gt;
+		&lt;/div&gt; &lt;!-- #top-header --&gt;
+	&lt;?php endif; // true ==== $et_top_info_defined ?&gt;
+
+	&lt;?php if ( $et_slide_header || is_customize_preview() ) : ?&gt;
+		&lt;div class=&quot;et_slide_in_menu_container&quot;&gt;
+			&lt;?php if ( &#039;fullscreen&#039; === et_get_option( &#039;header_style&#039;, &#039;left&#039; ) || is_customize_preview() ) { ?&gt;
+				&lt;span class=&quot;mobile_menu_bar et_toggle_fullscreen_menu&quot;&gt;&lt;/span&gt;
+			&lt;?php } ?&gt;
+
+			&lt;?php
+				if ( $et_contact_info_defined || true === $show_header_social_icons || false !== et_get_option( &#039;show_search_icon&#039;, true ) || class_exists( &#039;woocommerce&#039; ) || is_customize_preview() ) { ?&gt;
+					&lt;div class=&quot;et_slide_menu_top&quot;&gt;
+
+					&lt;?php if ( &#039;fullscreen&#039; === et_get_option( &#039;header_style&#039;, &#039;left&#039; ) ) { ?&gt;
+						&lt;div class=&quot;et_pb_top_menu_inner&quot;&gt;
+					&lt;?php } ?&gt;
+			&lt;?php }
+
+				if ( true === $show_header_social_icons ) {
+					get_template_part( &#039;includes/social_icons&#039;, &#039;header&#039; );
+				}
+
+				et_show_cart_total();
+			?&gt;
+			&lt;?php if ( false !== et_get_option( &#039;show_search_icon&#039;, true ) || is_customize_preview() ) : ?&gt;
+				&lt;?php if ( &#039;fullscreen&#039; !== et_get_option( &#039;header_style&#039;, &#039;left&#039; ) ) { ?&gt;
+					&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+				&lt;?php } ?&gt;
+				&lt;form role=&quot;search&quot; method=&quot;get&quot; class=&quot;et-search-form&quot; action=&quot;&lt;?php echo esc_url( home_url( &#039;/&#039; ) ); ?&gt;&quot;&gt;
+					&lt;?php
+						printf( &#039;&lt;input type=&quot;search&quot; class=&quot;et-search-field&quot; placeholder=&quot;%1$s&quot; placeholder=&quot;%2$s&quot; name=&quot;s&quot; title=&quot;%3$s&quot; /&gt;&#039;,
+							esc_attr__( &#039;Search &amp;hellip;&#039;, &#039;Divi&#039; ),
+							get_search_query(),
+							esc_attr__( &#039;Search for:&#039;, &#039;Divi&#039; )
+						);
+					?&gt;
+					&lt;button type=&quot;submit&quot; id=&quot;searchsubmit_header&quot;&gt;&lt;/button&gt;
+				&lt;/form&gt;
+			&lt;?php endif; // true === et_get_option( &#039;show_search_icon&#039;, false ) ?&gt;
+
+			&lt;?php if ( $et_contact_info_defined ) : ?&gt;
+
+				&lt;div id=&quot;et-info&quot;&gt;
+				&lt;?php if ( &#039;&#039; !== ( $et_phone_number = et_get_option( &#039;phone_number&#039; ) ) ) : ?&gt;
+					&lt;span id=&quot;et-info-phone&quot;&gt;&lt;?php echo et_sanitize_html_input_text( $et_phone_number ); ?&gt;&lt;/span&gt;
+				&lt;?php endif; ?&gt;
+
+				&lt;?php if ( &#039;&#039; !== ( $et_email = et_get_option( &#039;header_email&#039; ) ) ) : ?&gt;
+					&lt;a href=&quot;&lt;?php echo esc_attr( &#039;mailto:&#039; . $et_email ); ?&gt;&quot;&gt;&lt;span id=&quot;et-info-email&quot;&gt;&lt;?php echo esc_html( $et_email ); ?&gt;&lt;/span&gt;&lt;/a&gt;
+				&lt;?php endif; ?&gt;
+				&lt;/div&gt; &lt;!-- #et-info --&gt;
+
+			&lt;?php endif; // true === $et_contact_info_defined ?&gt;
+			&lt;?php if ( $et_contact_info_defined || true === $show_header_social_icons || false !== et_get_option( &#039;show_search_icon&#039;, true ) || class_exists( &#039;woocommerce&#039; ) || is_customize_preview() ) { ?&gt;
+				&lt;?php if ( &#039;fullscreen&#039; === et_get_option( &#039;header_style&#039;, &#039;left&#039; ) ) { ?&gt;
+					&lt;/div&gt; &lt;!-- .et_pb_top_menu_inner --&gt;
+				&lt;?php } ?&gt;
+
+				&lt;/div&gt; &lt;!-- .et_slide_menu_top --&gt;
+			&lt;?php } ?&gt;
+
+			&lt;div class=&quot;et_pb_fullscreen_nav_container&quot;&gt;
+				&lt;?php
+					$slide_nav = &#039;&#039;;
+					$slide_menu_class = &#039;et_mobile_menu&#039;;
+
+					$slide_nav = wp_nav_menu( array( &#039;theme_location&#039; =&gt; &#039;primary-menu&#039;, &#039;container&#039; =&gt; &#039;&#039;, &#039;fallback_cb&#039; =&gt; &#039;&#039;, &#039;echo&#039; =&gt; false, &#039;items_wrap&#039; =&gt; &#039;%3$s&#039; ) );
+					$slide_nav .= wp_nav_menu( array( &#039;theme_location&#039; =&gt; &#039;secondary-menu&#039;, &#039;container&#039; =&gt; &#039;&#039;, &#039;fallback_cb&#039; =&gt; &#039;&#039;, &#039;echo&#039; =&gt; false, &#039;items_wrap&#039; =&gt; &#039;%3$s&#039; ) );
+				?&gt;
+
+				&lt;ul id=&quot;mobile_menu_slide&quot; class=&quot;&lt;?php echo esc_attr( $slide_menu_class ); ?&gt;&quot;&gt;
+
+				&lt;?php
+					if ( &#039;&#039; == $slide_nav ) :
+				?&gt;
+						&lt;?php if ( &#039;on&#039; == et_get_option( &#039;divi_home_link&#039; ) ) { ?&gt;
+							&lt;li &lt;?php if ( is_home() ) echo( &#039;class=&quot;current_page_item&quot;&#039; ); ?&gt;&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/&#039; ) ); ?&gt;&quot;&gt;&lt;?php esc_html_e( &#039;Home&#039;, &#039;Divi&#039; ); ?&gt;&lt;/a&gt;&lt;/li&gt;
+						&lt;?php }; ?&gt;
+
+						&lt;?php show_page_menu( $slide_menu_class, false, false ); ?&gt;
+						&lt;?php show_categories_menu( $slide_menu_class, false ); ?&gt;
+				&lt;?php
+					else :
+						echo( $slide_nav );
+					endif;
+				?&gt;
+
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;?php endif; // true ==== $et_slide_header ?&gt;
+
+		&lt;header id=&quot;main-header&quot; data-height-onload=&quot;&lt;?php echo esc_attr( et_get_option( &#039;menu_height&#039;, &#039;66&#039; ) ); ?&gt;&quot;&gt;
+			&lt;div class=&quot;container clearfix et_menu_container&quot;&gt;
+			&lt;?php
+				$logo = ( $user_logo = et_get_option( &#039;divi_logo&#039; ) ) &amp;&amp; &#039;&#039; != $user_logo
+					? $user_logo
+					: $template_directory_uri . &#039;/images/logo.png&#039;;
+			?&gt;
+				&lt;div class=&quot;logo_container&quot;&gt;
+					&lt;span class=&quot;logo_helper&quot;&gt;&lt;/span&gt;
+					&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/&#039; ) ); ?&gt;&quot;&gt;
+						&lt;img src=&quot;&lt;?php echo esc_attr( $logo ); ?&gt;&quot; alt=&quot;&lt;?php echo esc_attr( get_bloginfo( &#039;name&#039; ) ); ?&gt;&quot; id=&quot;logo&quot; data-height-percentage=&quot;&lt;?php echo esc_attr( et_get_option( &#039;logo_height&#039;, &#039;54&#039; ) ); ?&gt;&quot; /&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div id=&quot;et-top-navigation&quot; data-height=&quot;&lt;?php echo esc_attr( et_get_option( &#039;menu_height&#039;, &#039;66&#039; ) ); ?&gt;&quot; data-fixed-height=&quot;&lt;?php echo esc_attr( et_get_option( &#039;minimized_menu_height&#039;, &#039;40&#039; ) ); ?&gt;&quot;&gt;
+					&lt;?php if ( ! $et_slide_header || is_customize_preview() ) : ?&gt;
+						&lt;nav id=&quot;top-menu-nav&quot;&gt;
+						&lt;?php
+							$menuClass = &#039;nav&#039;;
+							if ( &#039;on&#039; == et_get_option( &#039;divi_disable_toptier&#039; ) ) $menuClass .= &#039; et_disable_top_tier&#039;;
+							$primaryNav = &#039;&#039;;
+
+							$primaryNav = wp_nav_menu( array( &#039;theme_location&#039; =&gt; &#039;primary-menu&#039;, &#039;container&#039; =&gt; &#039;&#039;, &#039;fallback_cb&#039; =&gt; &#039;&#039;, &#039;menu_class&#039; =&gt; $menuClass, &#039;menu_id&#039; =&gt; &#039;top-menu&#039;, &#039;echo&#039; =&gt; false ) );
+
+							if ( &#039;&#039; == $primaryNav ) :
+						?&gt;
+							&lt;ul id=&quot;top-menu&quot; class=&quot;&lt;?php echo esc_attr( $menuClass ); ?&gt;&quot;&gt;
+								&lt;?php if ( &#039;on&#039; == et_get_option( &#039;divi_home_link&#039; ) ) { ?&gt;
+									&lt;li &lt;?php if ( is_home() ) echo( &#039;class=&quot;current_page_item&quot;&#039; ); ?&gt;&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/&#039; ) ); ?&gt;&quot;&gt;&lt;?php esc_html_e( &#039;Home&#039;, &#039;Divi&#039; ); ?&gt;&lt;/a&gt;&lt;/li&gt;
+								&lt;?php }; ?&gt;
+
+								&lt;?php show_page_menu( $menuClass, false, false ); ?&gt;
+								&lt;?php show_categories_menu( $menuClass, false ); ?&gt;
+							&lt;/ul&gt;
+						&lt;?php
+							else :
+								echo( $primaryNav );
+							endif;
+						?&gt;
+						&lt;/nav&gt;
+					&lt;?php endif; ?&gt;
+
+					&lt;?php
+					if ( ! $et_top_info_defined &amp;&amp; ( ! $et_slide_header || is_customize_preview() ) ) {
+						et_show_cart_total( array(
+							&#039;no_text&#039; =&gt; true,
+						) );
+					}
+					?&gt;
+
+					&lt;?php if ( $et_slide_header || is_customize_preview() ) : ?&gt;
+						&lt;span class=&quot;mobile_menu_bar et_pb_header_toggle et_toggle_&lt;?php echo esc_attr( et_get_option( &#039;header_style&#039;, &#039;left&#039; ) ); ?&gt;_menu&quot;&gt;&lt;/span&gt;
+					&lt;?php endif; ?&gt;
+
+					&lt;?php if ( ( false !== et_get_option( &#039;show_search_icon&#039;, true ) &amp;&amp; ! $et_slide_header ) || is_customize_preview() ) : ?&gt;
+					&lt;div id=&quot;et_top_search&quot;&gt;
+						&lt;span id=&quot;et_search_icon&quot;&gt;&lt;/span&gt;
+					&lt;/div&gt;
+					&lt;?php endif; // true === et_get_option( &#039;show_search_icon&#039;, false ) ?&gt;
+
+					&lt;?php do_action( &#039;et_header_top&#039; ); ?&gt;
+				&lt;/div&gt; &lt;!-- #et-top-navigation --&gt;
+			&lt;/div&gt; &lt;!-- .container --&gt;
+			&lt;div class=&quot;et_search_outer&quot;&gt;
+				&lt;div class=&quot;container et_search_form_container&quot;&gt;
+					&lt;form role=&quot;search&quot; method=&quot;get&quot; class=&quot;et-search-form&quot; action=&quot;&lt;?php echo esc_url( home_url( &#039;/&#039; ) ); ?&gt;&quot;&gt;
+					&lt;?php
+						printf( &#039;&lt;input type=&quot;search&quot; class=&quot;et-search-field&quot; placeholder=&quot;%1$s&quot; value=&quot;%2$s&quot; name=&quot;s&quot; title=&quot;%3$s&quot; /&gt;&#039;,
+							esc_attr__( &#039;Search &amp;hellip;&#039;, &#039;Divi&#039; ),
+							get_search_query(),
+							esc_attr__( &#039;Search for:&#039;, &#039;Divi&#039; )
+						);
+					?&gt;
+					&lt;/form&gt;
+					&lt;span class=&quot;et_close_search_field&quot;&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/header&gt; &lt;!-- #main-header --&gt;
+
+		&lt;div id=&quot;et-main-area&quot;&gt;</textarea>
+		<input type="hidden" name="action" value="update" />
+		<input type="hidden" name="file" value="header.php" />
+		<input type="hidden" name="theme" value="divi" />
+		<input type="hidden" name="scrollto" id="scrollto" value="0" />
+		</div>
+			<div id="documentation" class="hide-if-no-js">
+		<label for="docs-list">Documentación:</label>
+		<select name="docs-list" id="docs-list"><option value="">Nombre de la función&hellip;</option><option value="bloginfo">bloginfo()</option><option value="body_class">body_class()</option><option value="class_exists">class_exists()</option><option value="do_action">do_action()</option><option value="elegant_canonical">elegant_canonical()</option><option value="elegant_description">elegant_description()</option><option value="elegant_keywords">elegant_keywords()</option><option value="esc_attr">esc_attr()</option><option value="esc_attr__">esc_attr__()</option><option value="esc_html">esc_html()</option><option value="esc_html_e">esc_html_e()</option><option value="esc_url">esc_url()</option><option value="et_divi_get_top_nav_items">et_divi_get_top_nav_items()</option><option value="et_get_option">et_get_option()</option><option value="et_sanitize_html_input_text">et_sanitize_html_input_text()</option><option value="et_show_cart_total">et_show_cart_total()</option><option value="get_bloginfo">get_bloginfo()</option><option value="get_search_query">get_search_query()</option><option value="get_template_directory_uri">get_template_directory_uri()</option><option value="get_template_part">get_template_part()</option><option value="home_url">home_url()</option><option value="is_customize_preview">is_customize_preview()</option><option value="is_home">is_home()</option><option value="is_page_template">is_page_template()</option><option value="language_attributes">language_attributes()</option><option value="ob_end_clean">ob_end_clean()</option><option value="ob_get_contents">ob_get_contents()</option><option value="ob_start">ob_start()</option><option value="printf">printf()</option><option value="show_categories_menu">show_categories_menu()</option><option value="show_page_menu">show_page_menu()</option><option value="wp_head">wp_head()</option><option value="wp_nav_menu">wp_nav_menu()</option></select>		<input type="button" class="button" value="Buscar" onclick="if ( '' != jQuery('#docs-list').val() ) { window.open( 'https://api.wordpress.org/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=es_ES&amp;version=4.7.5&amp;redirect=true'); }" />
+		</div>
+	
+		<div>
+		<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Actualizar archivo"  /></p>		</div>
+	</form>
+<br class="clear" />
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	$('#template').submit(function(){ $('#scrollto').val( $('#newcontent').scrollTop() ); });
+	$('#newcontent').scrollTop( $('#scrollto').val() );
+});
+</script>
+
+<div class="clear"></div></div><!-- wpbody-content -->
+<div class="clear"></div></div><!-- wpbody -->
+<div class="clear"></div></div><!-- wpcontent -->
+
+<div id="wpfooter" role="contentinfo">
+		<p id="footer-left" class="alignleft">
+		<span id="footer-thankyou">Gracias por crear con <a href="https://es.wordpress.org/">WordPress</a>.</span>	</p>
+	<p id="footer-upgrade" class="alignright">
+		<strong><a href="http://www.aseim.cl/wp-admin/update-core.php">Obtener la versión 4.8</a></strong>	</p>
+	<div class="clear"></div>
+</div>
+	<div id="wp-auth-check-wrap" class="hidden">
+	<div id="wp-auth-check-bg"></div>
+	<div id="wp-auth-check">
+	<button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text">Cerrar diálogo</span></button>
+			<div id="wp-auth-check-form" class="loading" data-src="http://www.aseim.cl/wp-login.php?interim-login=1"></div>
+			<div class="wp-auth-fallback">
+		<p><b class="wp-auth-fallback-expired" tabindex="0">Sesión caducada</b></p>
+		<p><a href="http://www.aseim.cl/wp-login.php" target="_blank">Por favor, accede de nuevo.</a>
+		La página de acceso se abrirá en una ventana nueva. Después del acceso puede cerrarla y volver a esta página.</p>
+	</div>
+	</div>
+	</div>
+	
+<script type='text/javascript'>
+/* <![CDATA[ */
+var commonL10n = {"warnDelete":"Vas a eliminar estos elementos de forma permanente.\n  'Cancelar' para parar, 'OK' para borrarlos.","dismiss":"Descartar este aviso.","collapseMenu":"Contraer men\u00fa principal","expandMenu":"Desplegar men\u00fa principal"};var heartbeatSettings = {"nonce":"e41cb9b66e"};var authcheckL10n = {"beforeunload":"Tu sesi\u00f3n ha caducado. Puedes identificarte otra vez desde esta p\u00e1gina o ir a la p\u00e1gina de identificaci\u00f3n.","interval":"180"};/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.aseim.cl/wp-admin/load-scripts.php?c=0&amp;load%5B%5D=hoverIntent,common,admin-bar,svg-painter,heartbeat,wp-auth-check&amp;ver=4.7.5'></script>
+
+<div class="clear"></div></div><!-- wpwrap -->
+<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+</body>
+</html>

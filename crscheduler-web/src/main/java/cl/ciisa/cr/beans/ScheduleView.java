@@ -47,21 +47,6 @@ public class ScheduleView implements Serializable {
         selectedEvent = new Event();
     }
 
-    public Date getRandomDate(Date base) {
-        Calendar date = Calendar.getInstance();
-        date.setTime(base);
-        date.add(Calendar.DATE, ((int) (Math.random()*30)) + 1);    //set random day of month
-
-        return date.getTime();
-    }
-
-    public Date getInitialDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(calendar.get(Calendar.YEAR), Calendar.FEBRUARY, calendar.get(Calendar.DATE), 0, 0, 0);
-
-        return calendar.getTime();
-    }
-
     public ScheduleModel getEventModel() {
         return eventModel;
     }
@@ -165,14 +150,14 @@ public class ScheduleView implements Serializable {
             selectedEvent.setFechaHasta(dateComparator.getDate2());
         }
 
-        if(eventManager.isOverLaped(selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta(), freshEventList.get(selectedEvent.getSala()))){
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error al solicitar", "La sala está ocupada en ése rango horario.");
-
-            addMessage(message);
-            return;
-        }
-
         if(event.getId() == null){
+            if(eventManager.isOverLaped(selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta(), freshEventList.get(selectedEvent.getSala()))){
+                FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error al solicitar", "La sala está ocupada en ése rango horario.");
+
+                addMessage(message);
+                return;
+            }
+
             if(!withRange){
                 DateComparator datesToAdd = eventManager.getDatesByBloque(this.selectedEvent.getBloque(), event.getStartDate());
 
@@ -181,9 +166,15 @@ public class ScheduleView implements Serializable {
                 eventModel.addEvent(new DefaultScheduleEvent(selectedEvent.getSala() + " \n Profesor asignado: " + selectedEvent.getProfesor(), selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta()));
             }
         }
+        else {
+            DefaultScheduleEvent defaultScheduleEvent = (DefaultScheduleEvent) event;
 
-        else
+            defaultScheduleEvent.setTitle(selectedEvent.getSala() + " \n Profesor asignado: " + selectedEvent.getProfesor());
+            ((DefaultScheduleEvent) event).setStartDate(selectedEvent.getFechaDesde());
+            ((DefaultScheduleEvent) event).setEndDate(selectedEvent.getFechaHasta());
+
             eventModel.updateEvent(event);
+        }
 
         event = new DefaultScheduleEvent();
     }
@@ -242,13 +233,13 @@ public class ScheduleView implements Serializable {
     }
 
     public void onEventMove(ScheduleEntryMoveEvent event) {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Event moved", "Day delta:" + event.getDayDelta() + ", Minute delta:" + event.getMinuteDelta());
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cambio exitoso", "Dia:" + event.getDayDelta() + ", Minuto:" + event.getMinuteDelta());
 
         addMessage(message);
     }
 
     public void onEventResize(ScheduleEntryResizeEvent event) {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Event resized", "Day delta:" + event.getDayDelta() + ", Minute delta:" + event.getMinuteDelta());
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cambio exitoso", "Dia:" + event.getDayDelta() + ", Minuto:" + event.getMinuteDelta());
 
         addMessage(message);
     }
