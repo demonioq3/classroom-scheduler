@@ -9,19 +9,25 @@
     <div class="Animated05" id="layout-menu-cover">
         <ul class="layout-menu">
             <li style="background-image: url('#{resource['images/wallpaper.png']}');">
-                <a class="menulink ripplelink" style="color:#fff">
-                    <i class="icon-round58 Fs40"></i>
-                    <span class="Fs18">Homero Simpsons<i class="icon-downwards Fright Fs20"></i><br /><span class="Fs12 FontRobotoLight">Administrador</span></span>
-                </a>
+                <div style="width: 84%;padding: 12px 8%;display: block;font-family: 'roboto_condensedregular';-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;color:#fff">
+                    <i class="icon-round58 Fs40" style="    display: block;
+                    font-size: 13px;
+                    float: left;
+                    margin-right: 11px;
+                    margin-top: 5px;
+                    line-height: 0.7;"></i>
+
+                    <span class="Fs18">Homero Simpsons<br /><span class="Fs12 FontRobotoLight">Administrador</span></span>
+                </div>
+
+
             </li>
         </ul>
-        <div class="Separator"></div>
 
         <h:form id="manu">
             <pr:menu>
                 <p:menuitem id="calendario_general" value="Calendario general" icon="fa fa-calendar" outcome="home" />
                 <p:menuitem id="consulta_rut" value="Consulta por rut" icon="fa fa-search" outcome="busqueda"/>
-                <p:separator />
             </pr:menu>
         </h:form>
 
