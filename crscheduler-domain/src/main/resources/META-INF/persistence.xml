@@ -1,4 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
+    <persistence-unit name="crPersistenceUnit">
+        <class>cl.ciisa.crs.business.BloqueHorario</class>
+        <class>cl.ciisa.crs.business.Campus</class>
+        <class>cl.ciisa.crs.business.Carrera</class>
+        <class>cl.ciisa.crs.business.Institucion</class>
+        <class>cl.ciisa.crs.business.Profesor</class>
+        <class>cl.ciisa.crs.business.Sala</class>
+        <class>cl.ciisa.crs.business.TipoSala</class>
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/crscheduler"/>
+            <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="toplink.jdbc.user"/>
+            <property name="toplink.jdbc.password"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/crscheduler"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/crscheduler"/>
+            <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
+            <property name="openjpa.ConnectionUserName"/>
+            <property name="openjpa.ConnectionPassword"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/crscheduler"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user"/>
+            <property name="eclipselink.jdbc.password"/>
+        </properties>
+    </persistence-unit>
 </persistence>
