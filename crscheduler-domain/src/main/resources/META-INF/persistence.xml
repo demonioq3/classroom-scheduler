@@ -2,13 +2,13 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
     <persistence-unit name="crPersistenceUnit">
-        <class>cl.ciisa.crs.business.BloqueHorario</class>
-        <class>cl.ciisa.crs.business.Campus</class>
-        <class>cl.ciisa.crs.business.Carrera</class>
-        <class>cl.ciisa.crs.business.Institucion</class>
-        <class>cl.ciisa.crs.business.Profesor</class>
-        <class>cl.ciisa.crs.business.Sala</class>
-        <class>cl.ciisa.crs.business.TipoSala</class>
+        <class>cl.ciisa.crs.domain.BloqueHorario</class>
+        <class>cl.ciisa.crs.domain.Campus</class>
+        <class>cl.ciisa.crs.domain.Carrera</class>
+        <class>cl.ciisa.crs.domain.Institucion</class>
+        <class>cl.ciisa.crs.domain.Profesor</class>
+        <class>cl.ciisa.crs.domain.Sala</class>
+        <class>cl.ciisa.crs.domain.TipoSala</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/crscheduler"/>
             <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
