@@ -7,11 +7,12 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "institucion_educacional", schema = "crscheduler", catalog = "")
-public class Institucion {
+public class Institucion extends BaseEntity {
     private Long id;
     private String nombre;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public Long getId() {
         return id;
@@ -31,23 +32,4 @@ public class Institucion {
         this.nombre = nombre;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Institucion that = (Institucion) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (nombre != null ? !nombre.equals(that.nombre) : that.nombre != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
-        return result;
-    }
 }

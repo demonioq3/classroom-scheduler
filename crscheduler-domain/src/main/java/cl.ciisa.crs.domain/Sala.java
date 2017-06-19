@@ -1,24 +1,24 @@
 package cl.ciisa.crs.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by agustinsantiago on 6/17/17.
  */
 @Entity
-public class Sala {
+public class Sala extends BaseEntity {
     private Long id;
     private String codigo;
     private Date horaInicio;
     private Date horaFin;
-    private Long idCampus;
-    private Long idTipo;
+    private Campus campus;
+    private Long campusId;
+    private TipoSala tipoSala;
+    private Long tipoSalaId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public Long getId() {
         return id;
@@ -58,51 +58,43 @@ public class Sala {
         this.horaFin = horaFin;
     }
 
-    @Basic
-    @Column(name = "id_campus")
-    public Long getIdCampus() {
-        return idCampus;
+    @ManyToOne
+    @JoinColumn(name = "id_campus")
+    public Campus getCampus() {
+        return campus;
     }
 
-    public void setIdCampus(Long idCampus) {
-        this.idCampus = idCampus;
+    public void setCampus(Campus campus) {
+        this.campus = campus;
+    }
+
+    @Basic
+    @Column(name = "id_campus")
+    public Long getCampusId() {
+        return campusId;
+    }
+
+    public void setCampusId(Long campusId) {
+        this.campusId = campusId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo")
+    public TipoSala getTipoSala() {
+        return tipoSala;
+    }
+
+    public void setTipoSala(TipoSala tipoSala) {
+        this.tipoSala = tipoSala;
     }
 
     @Basic
     @Column(name = "id_tipo")
-    public Long getIdTipo() {
-        return idTipo;
+    public Long getTipoSalaId() {
+        return tipoSalaId;
     }
 
-    public void setIdTipo(Long idTipo) {
-        this.idTipo = idTipo;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Sala sala = (Sala) o;
-
-        if (id != null ? !id.equals(sala.id) : sala.id != null) return false;
-        if (codigo != null ? !codigo.equals(sala.codigo) : sala.codigo != null) return false;
-        if (horaInicio != null ? !horaInicio.equals(sala.horaInicio) : sala.horaInicio != null) return false;
-        if (horaFin != null ? !horaFin.equals(sala.horaFin) : sala.horaFin != null) return false;
-        if (idCampus != null ? !idCampus.equals(sala.idCampus) : sala.idCampus != null) return false;
-        if (idTipo != null ? !idTipo.equals(sala.idTipo) : sala.idTipo != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (codigo != null ? codigo.hashCode() : 0);
-        result = 31 * result + (horaInicio != null ? horaInicio.hashCode() : 0);
-        result = 31 * result + (horaFin != null ? horaFin.hashCode() : 0);
-        result = 31 * result + (idCampus != null ? idCampus.hashCode() : 0);
-        result = 31 * result + (idTipo != null ? idTipo.hashCode() : 0);
-        return result;
+    public void setTipoSalaId(Long tipoSalaId) {
+        this.tipoSalaId = tipoSalaId;
     }
 }

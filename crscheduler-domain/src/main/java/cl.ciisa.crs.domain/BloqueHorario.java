@@ -8,15 +8,18 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "bloque_horario_reserva", schema = "crscheduler", catalog = "")
-public class BloqueHorario {
+public class BloqueHorario extends BaseEntity {
     private Long id;
+    private Profesor profesor;
     private Long idProfesor;
+    private Sala sala;
     private Long idSala;
     private Date horaInicio;
     private Date horaFin;
     private boolean vigente;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public Long getId() {
         return id;
@@ -24,6 +27,16 @@ public class BloqueHorario {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_profesor")
+    public Profesor getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 
     @Basic
@@ -34,6 +47,16 @@ public class BloqueHorario {
 
     public void setIdProfesor(Long idProfesor) {
         this.idProfesor = idProfesor;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_sala")
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 
     @Basic
@@ -76,31 +99,4 @@ public class BloqueHorario {
         this.vigente = vigente;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        BloqueHorario that = (BloqueHorario) o;
-
-        if (vigente != that.vigente) return false;
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (idProfesor != null ? !idProfesor.equals(that.idProfesor) : that.idProfesor != null) return false;
-        if (idSala != null ? !idSala.equals(that.idSala) : that.idSala != null) return false;
-        if (horaInicio != null ? !horaInicio.equals(that.horaInicio) : that.horaInicio != null) return false;
-        if (horaFin != null ? !horaFin.equals(that.horaFin) : that.horaFin != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (idProfesor != null ? idProfesor.hashCode() : 0);
-        result = 31 * result + (idSala != null ? idSala.hashCode() : 0);
-        result = 31 * result + (horaInicio != null ? horaInicio.hashCode() : 0);
-        result = 31 * result + (horaFin != null ? horaFin.hashCode() : 0);
-        result = 31 * result + (vigente ? 1 : 0);
-        return result;
-    }
 }
