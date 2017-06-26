@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,4 +55,16 @@ public class ProfesorDAO implements Serializable {
         return true;
     }
 
+    public List<String> findByName(String name) {
+        List<Profesor> names = em.createQuery("select i from Profesor i where i.nombre like :name ORDER BY i.id asc", Profesor.class)
+                .setParameter("name", '%' + name + '%').getResultList();
+
+        List<String> asd = new ArrayList<String>();
+
+        for (Profesor profesor : names) {
+            asd.add(profesor.getNombre() + " " + profesor.getAprellidos());
+        }
+
+        return asd;
+    }
 }

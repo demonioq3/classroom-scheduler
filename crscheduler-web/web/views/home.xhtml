@@ -22,14 +22,12 @@
                         <p:dialog id="eventDialogId" widgetVar="eventDialog" header="#{scheduleView.event.id == null ? 'Ingresar solicitud de sala' : 'Editar solicitud'}" showEffect="clip" hideEffect="clip" modal="true">
                             <h:panelGrid id="eventDetails" columns="2">
                                 <p:outputLabel value="Profesor:" for="acSimple" style="float:left"/>
-                                <p:autoComplete id="acSimple" value="#{scheduleView.selectedEvent.profesor}" completeMethod="#{scheduleView.completeText}" required="true" />
+                                <p:autoComplete id="acSimple" value="#{scheduleView.selectedEvent.profesor}" completeMethod="#{scheduleView.completeText}" required="true" forceSelection="true"/>
 
                                 <p:outputLabel for="sala" value="Sala:" style="float:left"/>
                                 <p:selectOneMenu id="sala" value="#{scheduleView.selectedEvent.sala}" style="width:114px" required="true">
                                     <f:selectItem itemLabel="Seleccionar" itemValue="" />
-                                    <f:selectItem itemLabel="Sala 01" itemValue="Sala 01" />
-                                    <f:selectItem itemLabel="Sala 02" itemValue="Sala 02" />
-                                    <f:selectItem itemLabel="Sala 03" itemValue="Sala 03" />
+                                    <f:selectItems value="#{scheduleView.allSalas}" var="sala" itemLabel="#{sala.codigo}" itemValue="#{sala.id}" />
                                 </p:selectOneMenu>
 
                                 <p:outputLabel id="from_label" for="from" value="Hora desde:" rendered="#{scheduleView.withRange}" style="float:left"/>

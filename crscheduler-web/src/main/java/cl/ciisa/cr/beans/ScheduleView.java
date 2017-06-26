@@ -11,9 +11,12 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import cl.ciisa.crs.business.BloqueHorarioManager;
+import cl.ciisa.crs.business.ProfesorManager;
+import cl.ciisa.crs.business.SalaManager;
 import cl.ciisa.crs.business.dummy.DateComparator;
 import cl.ciisa.crs.business.dummy.Event;
 import cl.ciisa.crscheduler.domain.BloqueHorario;
+import cl.ciisa.crscheduler.domain.Sala;
 import org.primefaces.event.ScheduleEntryMoveEvent;
 import org.primefaces.event.ScheduleEntryResizeEvent;
 import org.primefaces.event.SelectEvent;
@@ -38,6 +41,12 @@ public class ScheduleView extends BaseBean implements Serializable {
 
     @EJB
     public BloqueHorarioManager bloqueHorarioManager;
+
+    @EJB
+    public ProfesorManager profesorManager;
+
+    @EJB
+    public SalaManager salaManager;
 
     @PostConstruct
     public void init() {
@@ -137,6 +146,10 @@ public class ScheduleView extends BaseBean implements Serializable {
         return t.getTime();
     }
 
+    public List<Sala> getAllSalas(){
+        return salaManager.findAll();
+    }
+
     public ScheduleEvent getEvent() {
         return event;
     }
@@ -219,11 +232,6 @@ public class ScheduleView extends BaseBean implements Serializable {
         selectedEvent.setSala(event.getTitle().split("\\n")[0].substring(0, event.getTitle().split("\\n")[0].length() - 1));
         selectedEvent.setProfesor(event.getTitle().split("\\n")[1].replace(" Profesor asignado: ", ""));
         selectedEvent.setBloque(bloqueHorarioManager.getBloqueByDates((Date) ((ScheduleEvent) selectEvent.getObject()).getStartDate(), (Date) ((ScheduleEvent) selectEvent.getObject()).getEndDate()));
-        if(selectedEvent.getBloque().equals("0")){
-            withRange = true;
-        } else {
-            withRange = false;
-        }
         selectedEvent.setFechaDesde((Date) ((ScheduleEvent) selectEvent.getObject()).getStartDate());
         selectedEvent.setFechaHasta((Date) ((ScheduleEvent) selectEvent.getObject()).getEndDate());
     }
@@ -232,7 +240,6 @@ public class ScheduleView extends BaseBean implements Serializable {
         event = new DefaultScheduleEvent("", (Date) selectEvent.getObject(), (Date) selectEvent.getObject());
         selectedEvent.setProfesor("");
         selectedEvent.setSala("");
-        withRange = false;
         selectedEvent.setFechaDesde((Date) selectEvent.getObject());
         selectedEvent.setFechaHasta((Date) selectEvent.getObject());
     }
@@ -254,12 +261,9 @@ public class ScheduleView extends BaseBean implements Serializable {
     }
 
     public List<String> completeText(String query) {
-        List<String> results = new ArrayList<String>();
-        for(int i = 0; i < 10; i++) {
-            results.add(query + i);
-        }
+        List<String> byName = profesorManager.findByName(query.toUpperCase());
 
-        return results;
+        return byName;
     }
 
 
