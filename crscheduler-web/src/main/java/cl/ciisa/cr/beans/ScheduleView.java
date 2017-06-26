@@ -34,7 +34,7 @@ public class ScheduleView extends BaseBean implements Serializable {
 
     private List<BloqueHorario> bloques;
 
-    public boolean withRange = false;
+    public boolean withRange = true;
 
     @EJB
     public BloqueHorarioManager bloqueHorarioManager;

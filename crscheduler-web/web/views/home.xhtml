@@ -32,26 +32,6 @@
                                     <f:selectItem itemLabel="Sala 03" itemValue="Sala 03" />
                                 </p:selectOneMenu>
 
-                                <p:outputLabel for="bloque" value="Bloque:" style="float:left"/>
-                                <p:selectOneMenu id="bloque" value="#{scheduleView.selectedEvent.bloque}" style="width:114px" required="true">
-                                    <f:selectItem itemLabel="Seleccionar" itemValue="0" />
-                                    <f:selectItem itemLabel="DIU: 08:15-09:45" itemValue="1" />
-                                    <f:selectItem itemLabel="DIU: 10:00-11:30" itemValue="2" />
-                                    <f:selectItem itemLabel="DIU: 11:45-13:15" itemValue="3" />
-                                    <f:selectItem itemLabel="DIU: 14:00-15:30" itemValue="4" />
-                                    <f:selectItem itemLabel="DIU: 15:40-17:10" itemValue="5" />
-                                    <f:selectItem itemLabel="DIU: 17:20-18:50" itemValue="6" />
-                                    <f:selectItem itemLabel="VES: 18:50-20:10" itemValue="7" />
-                                    <f:selectItem itemLabel="VES: 20:10-21:45" itemValue="8" />
-                                    <f:selectItem itemLabel="VES: 21:45-22:30" itemValue="9" />
-
-                                </p:selectOneMenu>
-
-                                <h:outputText value="¿Rango?" style="float:left"/>
-                                <p:selectBooleanButton id="value1" value="#{scheduleView.withRange}" onLabel="Si" offLabel="No" style="width: 170px;background-color: rgba(62, 62, 62, 0.72) !important;">
-                                    <p:ajax update="eventDetails" listener="#{scheduleView.lol}" />
-                                </p:selectBooleanButton>
-
 
                                 <p:outputLabel id="from_label" for="from" value="Hora desde:" rendered="#{scheduleView.withRange}" style="float:left"/>
                                 <p:calendar id="from" value="#{scheduleView.selectedEvent.fechaDesde}" pattern="dd/MM/yyyy HH:mm" rendered="#{scheduleView.withRange}" style="width: 170px;"/>
