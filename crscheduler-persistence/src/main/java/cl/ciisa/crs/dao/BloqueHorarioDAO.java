@@ -1,11 +1,12 @@
-package cl.ciisa.crs.persistence.dao;
+package cl.ciisa.crs.dao;
 
-import cl.ciisa.crs.domain.BloqueHorario;
+import cl.ciisa.crscheduler.domain.BloqueHorario;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,18 +15,30 @@ import java.util.List;
 @Stateless
 public class BloqueHorarioDAO implements Serializable {
 
-    @PersistenceContext(unitName = "crPersistenceUnit")
+    @PersistenceContext(unitName = "CRPUnit")
     private EntityManager em;
 
     public BloqueHorario getById(Long id) {
         BloqueHorario bloqueHorario = em.find(BloqueHorario.class, id);
 
-        em.detach(bloqueHorario);
         return bloqueHorario;
     }
 
     public List<BloqueHorario> findAll() {
-        return em.createQuery("select i from BloqueHorario i ORDER BY i.id asc").getResultList();
+        List<BloqueHorario> resultList = em.createQuery("select i from BloqueHorario i ORDER BY i.id asc", BloqueHorario.class).getResultList();
+        return cleanList(resultList);
+    }
+
+    private List<BloqueHorario> cleanList(List<BloqueHorario> bloqueHorarios) {
+        List<BloqueHorario> cleanList = new ArrayList<BloqueHorario>();
+
+        for (BloqueHorario bloqueHorario : bloqueHorarios) {
+            em.detach(bloqueHorario);
+        }
+
+        cleanList.addAll(bloqueHorarios);
+
+        return cleanList;
     }
 
     public BloqueHorario create(BloqueHorario bloqueHorario) {
@@ -55,4 +68,8 @@ public class BloqueHorarioDAO implements Serializable {
         return true;
     }
 
+    public List<BloqueHorario> findByRut(String rut) {
+        return em.createQuery("select i from BloqueHorario i where i.profesor.rut =:rut ORDER BY i.id asc", BloqueHorario.class)
+                .setParameter("rut", rut).getResultList();
+    }
 }

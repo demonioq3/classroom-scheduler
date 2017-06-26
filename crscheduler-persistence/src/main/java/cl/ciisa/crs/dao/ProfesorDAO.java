@@ -1,7 +1,6 @@
-package cl.ciisa.crs.persistence.dao;
+package cl.ciisa.crs.dao;
 
-import cl.ciisa.crs.domain.Institucion;
-import cl.ciisa.crs.domain.Profesor;
+import cl.ciisa.crscheduler.domain.Profesor;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,13 +14,12 @@ import java.util.List;
 @Stateless
 public class ProfesorDAO implements Serializable {
 
-    @PersistenceContext(unitName = "crPersistenceUnit")
+    @PersistenceContext(unitName = "CRPUnit")
     private EntityManager em;
 
     public Profesor getById(Long id) {
         Profesor profesor = em.find(Profesor.class, id);
 
-        em.detach(profesor);
         return profesor;
     }
 

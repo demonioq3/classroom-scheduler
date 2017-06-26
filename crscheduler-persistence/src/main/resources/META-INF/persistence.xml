@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="CRPUnit">
+        <jta-data-source>java:/CRDS</jta-data-source>
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>cl.ciisa.crscheduler.domain.BloqueHorario</class>
+        <class>cl.ciisa.crscheduler.domain.Campus</class>
+        <class>cl.ciisa.crscheduler.domain.Carrera</class>
+        <class>cl.ciisa.crscheduler.domain.Institucion</class>
+        <class>cl.ciisa.crscheduler.domain.Profesor</class>
+        <class>cl.ciisa.crscheduler.domain.Sala</class>
+        <class>cl.ciisa.crscheduler.domain.TipoSala</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,16 +1,18 @@
-package cl.ciisa.crs.domain;
+package cl.ciisa.crscheduler.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by agustinsantiago on 6/17/17.
  */
 @Entity
-public class Profesor extends BaseEntity {
+public class Profesor extends BaseEntity implements Serializable {
     private Long id;
     private String nombre;
     private String aprellidos;
     private int rut;
+    private Carrera carrera;
     private Long idCarrera;
 
     @Id
@@ -52,6 +54,16 @@ public class Profesor extends BaseEntity {
 
     public void setRut(int rut) {
         this.rut = rut;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_carrera", referencedColumnName = "id", insertable = false, updatable = false)
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
     }
 
     @Basic

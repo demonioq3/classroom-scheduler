@@ -1,7 +1,6 @@
-package cl.ciisa.crs.persistence.dao;
+package cl.ciisa.crs.dao;
 
-import cl.ciisa.crs.domain.BloqueHorario;
-import cl.ciisa.crs.domain.Campus;
+import cl.ciisa.crscheduler.domain.Campus;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,13 +14,12 @@ import java.util.List;
 @Stateless
 public class CampusDAO implements Serializable {
 
-    @PersistenceContext(unitName = "crPersistenceUnit")
+    @PersistenceContext(unitName = "CRPUnit")
     private EntityManager em;
 
     public Campus getById(Long id) {
         Campus campus = em.find(Campus.class, id);
 
-        em.detach(campus);
         return campus;
     }
 

@@ -1,7 +1,6 @@
-package cl.ciisa.crs.persistence.dao;
+package cl.ciisa.crs.dao;
 
-import cl.ciisa.crs.domain.Campus;
-import cl.ciisa.crs.domain.Carrera;
+import cl.ciisa.crscheduler.domain.Carrera;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,13 +14,12 @@ import java.util.List;
 @Stateless
 public class CarreraDAO implements Serializable {
 
-    @PersistenceContext(unitName = "crPersistenceUnit")
+    @PersistenceContext(unitName = "CRPUnit")
     private EntityManager em;
 
     public Carrera getById(Long id) {
         Carrera carrera = em.find(Carrera.class, id);
 
-        em.detach(carrera);
         return carrera;
     }
 

@@ -1,14 +1,15 @@
-package cl.ciisa.crs.domain;
+package cl.ciisa.crscheduler.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by agustinsantiago on 6/17/17.
  */
 @Entity
-@Table(name = "bloque_horario_reserva", schema = "crscheduler", catalog = "")
-public class BloqueHorario extends BaseEntity {
+@Table(name = "bloque_horario_reserva")
+public class BloqueHorario extends BaseEntity implements Serializable {
     private Long id;
     private Profesor profesor;
     private Long idProfesor;
@@ -30,7 +31,7 @@ public class BloqueHorario extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_profesor")
+    @JoinColumn(name = "id_profesor", referencedColumnName = "id", insertable = false, updatable = false)
     public Profesor getProfesor() {
         return profesor;
     }
@@ -40,7 +41,7 @@ public class BloqueHorario extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "id_profesor")
+    @Column(name = "id_profesor", nullable = false, insertable = true, updatable = true)
     public Long getIdProfesor() {
         return idProfesor;
     }
@@ -50,7 +51,7 @@ public class BloqueHorario extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_sala")
+    @JoinColumn(name = "id_sala", referencedColumnName = "id", insertable = false, updatable = false)
     public Sala getSala() {
         return sala;
     }

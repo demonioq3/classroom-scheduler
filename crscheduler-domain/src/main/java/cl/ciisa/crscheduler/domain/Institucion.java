@@ -1,12 +1,14 @@
-package cl.ciisa.crs.domain;
+package cl.ciisa.crscheduler.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by agustinsantiago on 6/17/17.
  */
 @Entity
-public class Carrera extends BaseEntity {
+@Table(name = "institucion_educacional", schema = "crscheduler", catalog = "")
+public class Institucion extends BaseEntity implements Serializable {
     private Long id;
     private String nombre;
 

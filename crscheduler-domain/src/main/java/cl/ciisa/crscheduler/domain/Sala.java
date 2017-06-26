@@ -1,13 +1,14 @@
-package cl.ciisa.crs.domain;
+package cl.ciisa.crscheduler.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by agustinsantiago on 6/17/17.
  */
 @Entity
-public class Sala extends BaseEntity {
+public class Sala extends BaseEntity implements Serializable {
     private Long id;
     private String codigo;
     private Date horaInicio;
@@ -59,7 +60,7 @@ public class Sala extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_campus")
+    @JoinColumn(name = "id_campus", referencedColumnName = "id", insertable = false, updatable = false)
     public Campus getCampus() {
         return campus;
     }
@@ -79,7 +80,7 @@ public class Sala extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo")
+    @JoinColumn(name = "id_tipo", referencedColumnName = "id", insertable = false, updatable = false)
     public TipoSala getTipoSala() {
         return tipoSala;
     }

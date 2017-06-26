@@ -1,7 +1,6 @@
-package cl.ciisa.crs.persistence.dao;
+package cl.ciisa.crs.dao;
 
-import cl.ciisa.crs.domain.Sala;
-import cl.ciisa.crs.domain.TipoSala;
+import cl.ciisa.crscheduler.domain.TipoSala;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,13 +14,12 @@ import java.util.List;
 @Stateless
 public class TipoSalaDAO implements Serializable {
 
-    @PersistenceContext(unitName = "crPersistenceUnit")
+    @PersistenceContext(unitName = "CRPUnit")
     private EntityManager em;
 
     public TipoSala getById(Long id) {
         TipoSala tipoSala = em.find(TipoSala.class, id);
 
-        em.detach(tipoSala);
         return tipoSala;
     }
 

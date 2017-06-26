@@ -10,9 +10,10 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
-import cl.ciisa.crs.business.EventManager;
+import cl.ciisa.crs.business.BloqueHorarioManager;
 import cl.ciisa.crs.business.dummy.DateComparator;
 import cl.ciisa.crs.business.dummy.Event;
+import cl.ciisa.crscheduler.domain.BloqueHorario;
 import org.primefaces.event.ScheduleEntryMoveEvent;
 import org.primefaces.event.ScheduleEntryResizeEvent;
 import org.primefaces.event.SelectEvent;
@@ -23,7 +24,7 @@ import org.primefaces.model.ScheduleModel;
 
 @ManagedBean
 @ViewScoped
-public class ScheduleView implements Serializable {
+public class ScheduleView extends BaseBean implements Serializable {
 
     private ScheduleModel eventModel;
 
@@ -31,18 +32,22 @@ public class ScheduleView implements Serializable {
 
     private Event selectedEvent;
 
+    private List<BloqueHorario> bloques;
+
     public boolean withRange = false;
 
     @EJB
-    public EventManager eventManager;
+    public BloqueHorarioManager bloqueHorarioManager;
 
     @PostConstruct
     public void init() {
         eventModel = new DefaultScheduleModel();
-        eventModel.addEvent(new DefaultScheduleEvent("Sala 01 \n Profesor asignado: Juan Sepúlveda", previousDay8Pm(), previousDay11Pm()));
-        eventModel.addEvent(new DefaultScheduleEvent("Sala 02 \n Profesor asignado: Juan Sepúlveda", today1Pm(), today6Pm()));
-        eventModel.addEvent(new DefaultScheduleEvent("Sala 02 \n Profesor asignado: Juan Sepúlveda", nextDay9Am(), nextDay11Am()));
-        eventModel.addEvent(new DefaultScheduleEvent("Sala 03 \n Profesor asignado: Juan Sepúlveda", theDayAfter3Pm(), fourDaysLater3pm()));
+
+        List<BloqueHorario> bloques = bloqueHorarioManager.getBloquesHorario();
+
+        for (BloqueHorario bloque : bloques) {
+            eventModel.addEvent(new DefaultScheduleEvent(bloque.getSala().getCodigo() + " \n Profesor asignado: " + bloque.getProfesor().getNombre() + " " + bloque.getProfesor().getAprellidos(), bloque.getHoraInicio(), bloque.getHoraFin()));
+        }
 
         selectedEvent = new Event();
     }
@@ -144,14 +149,14 @@ public class ScheduleView implements Serializable {
         HashMap<String, List<Event>> freshEventList = getFreshEventList(eventModel);
 
         if(!withRange){
-            DateComparator dateComparator = eventManager.getDatesByBloque(selectedEvent.getBloque(), event.getStartDate());
+            DateComparator dateComparator = bloqueHorarioManager.getDatesByBloque(selectedEvent.getBloque(), event.getStartDate());
 
             selectedEvent.setFechaDesde(dateComparator.getDate1());
             selectedEvent.setFechaHasta(dateComparator.getDate2());
         }
 
         if(event.getId() == null){
-            if(eventManager.isOverLaped(selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta(), freshEventList.get(selectedEvent.getSala()))){
+            if(bloqueHorarioManager.isOverLaped(selectedEvent.getFechaDesde(), selectedEvent.getFechaHasta(), freshEventList.get(selectedEvent.getSala()))){
                 FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error al solicitar", "La sala está ocupada en ése rango horario.");
 
                 addMessage(message);
@@ -159,7 +164,7 @@ public class ScheduleView implements Serializable {
             }
 
             if(!withRange){
-                DateComparator datesToAdd = eventManager.getDatesByBloque(this.selectedEvent.getBloque(), event.getStartDate());
+                DateComparator datesToAdd = bloqueHorarioManager.getDatesByBloque(this.selectedEvent.getBloque(), event.getStartDate());
 
                 eventModel.addEvent(new DefaultScheduleEvent(selectedEvent.getSala() + " \n Profesor asignado: " + selectedEvent.getProfesor(), datesToAdd.getDate1(), datesToAdd.getDate2()));
             } else {
@@ -213,7 +218,7 @@ public class ScheduleView implements Serializable {
         event = (ScheduleEvent) selectEvent.getObject();
         selectedEvent.setSala(event.getTitle().split("\\n")[0].substring(0, event.getTitle().split("\\n")[0].length() - 1));
         selectedEvent.setProfesor(event.getTitle().split("\\n")[1].replace(" Profesor asignado: ", ""));
-        selectedEvent.setBloque(eventManager.getBloqueByDates((Date) ((ScheduleEvent) selectEvent.getObject()).getStartDate(), (Date) ((ScheduleEvent) selectEvent.getObject()).getEndDate()));
+        selectedEvent.setBloque(bloqueHorarioManager.getBloqueByDates((Date) ((ScheduleEvent) selectEvent.getObject()).getStartDate(), (Date) ((ScheduleEvent) selectEvent.getObject()).getEndDate()));
         if(selectedEvent.getBloque().equals("0")){
             withRange = true;
         } else {
@@ -276,5 +281,13 @@ public class ScheduleView implements Serializable {
 
     public void lol(){
 
+    }
+
+    public List<BloqueHorario> getBloques() {
+        return bloques;
+    }
+
+    public void setBloques(List<BloqueHorario> bloques) {
+        this.bloques = bloques;
     }
 }

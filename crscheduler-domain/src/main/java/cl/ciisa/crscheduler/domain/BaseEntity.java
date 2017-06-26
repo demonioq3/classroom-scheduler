@@ -1,4 +1,4 @@
-package cl.ciisa.crs.domain;
+package cl.ciisa.crscheduler.domain;
 
 /**
  * Created by agustinsantiago on 6/18/17.
